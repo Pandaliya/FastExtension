@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D5628A65638CD0C7FF535E5C0E918A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		1090263AB3F33C3A0155DDA13EB071EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		16AE958CE1BE09D18010D9374B2ADE9C /* Pods-FastExtention_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9976FCA86345BE62944FC4DA0D2A04A0 /* Pods-FastExtention_Example-dummy.m */; };
 		1E2A9E92F17C737A763518B555A07E73 /* Pods-FastExtention_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A942CC23DD87C418D26AFFBC7C3EB7 /* Pods-FastExtention_Tests-dummy.m */; };
+		3DE1D015C63EAA01CCBB083FED79D402 /* FastExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD52CA68A968AFDFD8258E16B4897BF3 /* FastExtension-dummy.m */; };
 		524337A4A086F2FE8629CCC82F45D59E /* Pods-FastExtention_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FAEE8D9FE4E79340BB53BF419AE3D10 /* Pods-FastExtention_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		76EAA68961C73A29CA7B6B72CD8F0015 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		846CAC82BA92D37E4AC68732DAED5AF1 /* DeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7622F865725F9EDF933AE1E9BEB01CAD /* DeviceExtension.swift */; };
-		9CEACB0FD9A33DAA9FB55ABA7E86302E /* Pods-FastExtention_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AAD676148C873B9260E43ED1A9D4BD89 /* Pods-FastExtention_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A57BBB410DA072899B78ADF43895A5B3 /* Pods-FastExtention_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9976FCA86345BE62944FC4DA0D2A04A0 /* Pods-FastExtention_Example-dummy.m */; };
-		A87942F96CE5A65D11173C74EA5DD1DE /* AppExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195F656CC9AEFF6BDF40E690D71B2E65 /* AppExtension.swift */; };
+		97ED63756B7F62AB45F1F5CCEC7C3EE1 /* DeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5547620B57217E34BD4B1BEDAC35761 /* DeviceExtension.swift */; };
+		A494C9AD99EE300682CD6149F509C30E /* Pods-FastExtention_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AAD676148C873B9260E43ED1A9D4BD89 /* Pods-FastExtention_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0081BC41F3C5550E91B011244ECBE6A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
 		B835D26BA1683F32E14C43E02CCEF1C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		C05F00F3A9E94DBF1A1AB87A5F8585AF /* FastExtention-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 370F3DDB6B96B48542A5C3B354343A98 /* FastExtention-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C9F27D11CFDD5C59E13B331547DB58DD /* FastExtention-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7BC087B89A391D851B4951D8D1A537 /* FastExtention-dummy.m */; };
-		F61A3AFA2BF386165EDC5C953F4CAD17 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
+		E1BD506BEA186AD118989E19DEE64E37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		E243677E6B9CC1E824EF68094FA472F1 /* FastExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D7DE3679CD7CAEA8C09D1E78373AC70 /* FastExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E37C98DF6E1B2256177B9C18923D8B27 /* AppExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5704CE9165E06EA7FC04FB69E8168 /* AppExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,47 +29,47 @@
 			remoteGlobalIDString = 3CA52256251A7CF24A7007FDAF1B7D34;
 			remoteInfo = "Pods-FastExtention_Example";
 		};
-		E847AFF6F807DE74722EBEA1375288AF /* PBXContainerItemProxy */ = {
+		A115D2D70A482F3F441A947615E77072 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8947C2749136007B012AEEAE9D5CC6D5;
-			remoteInfo = FastExtention;
+			remoteGlobalIDString = 18B079C43D95FDD216DC0A32721C3E08;
+			remoteInfo = FastExtension;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		024A0B812DCBE965D67B4B4906F42A5A /* FastExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FastExtension.release.xcconfig; sourceTree = "<group>"; };
 		02B87CB63F069B4D2A96A3C113DD2DED /* Pods-FastExtention_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FastExtention_Tests-Info.plist"; sourceTree = "<group>"; };
 		0CD77DA144697EB5FE9085457E45E557 /* Pods-FastExtention_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FastExtention_Example.release.xcconfig"; sourceTree = "<group>"; };
 		13ECD181E0B88E52EA6DF43DF631E5FE /* Pods-FastExtention_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FastExtention_Tests.modulemap"; sourceTree = "<group>"; };
-		1824D5A4B3D6296A2639EEC76402CE02 /* FastExtention */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FastExtention; path = FastExtention.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		195F656CC9AEFF6BDF40E690D71B2E65 /* AppExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppExtension.swift; path = FastExtention/Classes/AppExtension.swift; sourceTree = "<group>"; };
-		2F7BC087B89A391D851B4951D8D1A537 /* FastExtention-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FastExtention-dummy.m"; sourceTree = "<group>"; };
+		1548B245CE3006E98504357C0FC065C9 /* FastExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FastExtension.modulemap; sourceTree = "<group>"; };
 		30CDF3C71A20E2BA9913D3FBF87B4398 /* Pods-FastExtention_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FastExtention_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		370F3DDB6B96B48542A5C3B354343A98 /* FastExtention-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FastExtention-umbrella.h"; sourceTree = "<group>"; };
-		379605C8810915FBD488F35ECF7168D7 /* FastExtention.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FastExtention.release.xcconfig; sourceTree = "<group>"; };
-		42D374307CE39FCAAB14F3C4095AF3E2 /* FastExtention-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FastExtention-Info.plist"; sourceTree = "<group>"; };
-		5216A6C7C0A1A0A62701E7092694E08F /* FastExtention.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = FastExtention.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		5AA104C09BB216EE77B628FAE2A3B1CA /* FastExtention.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FastExtention.modulemap; sourceTree = "<group>"; };
+		3D7DE3679CD7CAEA8C09D1E78373AC70 /* FastExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FastExtension-umbrella.h"; sourceTree = "<group>"; };
+		40967E4D38DC65BEFB2D86CC44A85111 /* FastExtension.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = FastExtension.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4B083659DB915A4A25897DA343E2ED75 /* FastExtension-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FastExtension-prefix.pch"; sourceTree = "<group>"; };
 		65B1BEDEB16E95A4802332876D1432E7 /* Pods-FastExtention_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-FastExtention_Tests"; path = Pods_FastExtention_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		673D9D9C2D0E375B07E9A78AA2FD7765 /* Pods-FastExtention_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FastExtention_Example.modulemap"; sourceTree = "<group>"; };
+		6AF31DB2F427306EF7E1DE9AF54AD8C7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		6BE5704CE9165E06EA7FC04FB69E8168 /* AppExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppExtension.swift; path = FastExtension/Classes/AppExtension.swift; sourceTree = "<group>"; };
 		70A942CC23DD87C418D26AFFBC7C3EB7 /* Pods-FastExtention_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FastExtention_Tests-dummy.m"; sourceTree = "<group>"; };
-		7622F865725F9EDF933AE1E9BEB01CAD /* DeviceExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeviceExtension.swift; path = FastExtention/Classes/DeviceExtension.swift; sourceTree = "<group>"; };
-		7624E5E51522237F2B63180A427D9FFD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		76E4D1901F4FD5EF70D4C1C254FC20C2 /* FastExtension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FastExtension-Info.plist"; sourceTree = "<group>"; };
 		76F455CAF188CC7B501F41E518B1F6F3 /* Pods-FastExtention_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-FastExtention_Example"; path = Pods_FastExtention_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B58B75E00C0A25E888764F3EF9E4CFB /* Pods-FastExtention_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FastExtention_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		89075A6D103326F84D312E3428450595 /* Pods-FastExtention_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FastExtention_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		9976FCA86345BE62944FC4DA0D2A04A0 /* Pods-FastExtention_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FastExtention_Example-dummy.m"; sourceTree = "<group>"; };
-		9AA643DCD0F9BD34E83FB43A48F07E99 /* FastExtention-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FastExtention-prefix.pch"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9EA205755855419B205662583A73F653 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		9FAEE8D9FE4E79340BB53BF419AE3D10 /* Pods-FastExtention_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FastExtention_Tests-umbrella.h"; sourceTree = "<group>"; };
+		A2EE7E44EFB119F1F2BFA4516C0FBAFA /* FastExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FastExtension.debug.xcconfig; sourceTree = "<group>"; };
 		AAD676148C873B9260E43ED1A9D4BD89 /* Pods-FastExtention_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FastExtention_Example-umbrella.h"; sourceTree = "<group>"; };
 		B003C22C1637ED13CAF96AB9B265AD43 /* Pods-FastExtention_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FastExtention_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		B8A05D0E77CF008C9876A58EC4D22558 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		B8BC974A550B70044BF1A8F71E95E0A0 /* Pods-FastExtention_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FastExtention_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BD52CA68A968AFDFD8258E16B4897BF3 /* FastExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FastExtension-dummy.m"; sourceTree = "<group>"; };
+		C5547620B57217E34BD4B1BEDAC35761 /* DeviceExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeviceExtension.swift; path = FastExtension/Classes/DeviceExtension.swift; sourceTree = "<group>"; };
+		CAA8E61E8EF9608C5728072992CC22C7 /* FastExtension */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FastExtension; path = FastExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA1C7E38DD86986F88609925E0330BA /* Pods-FastExtention_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FastExtention_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		D4189A3BC8FB727F0D93BC8A84311E35 /* FastExtention.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FastExtention.debug.xcconfig; sourceTree = "<group>"; };
 		E95B90DE125500D3E2BC1DC1FBE94BEF /* Pods-FastExtention_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FastExtention_Example-Info.plist"; sourceTree = "<group>"; };
 		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		F030923D5C2C240D628B9BD7C48A13AC /* Pods-FastExtention_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FastExtention_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -77,20 +77,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		290CF7881FA4852A0A5E93763CE7D49F /* Frameworks */ = {
+		111734BD76316A716A54F92B75FDBD0E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76EAA68961C73A29CA7B6B72CD8F0015 /* Foundation.framework in Frameworks */,
-				F61A3AFA2BF386165EDC5C953F4CAD17 /* UIKit.framework in Frameworks */,
+				E1BD506BEA186AD118989E19DEE64E37 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		311F5EE2092B5299D010563084C640E4 /* Frameworks */ = {
+		9B2BEFD757DA7AD40AF65B60259037D6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D5628A65638CD0C7FF535E5C0E918A1 /* Foundation.framework in Frameworks */,
+				1090263AB3F33C3A0155DDA13EB071EB /* Foundation.framework in Frameworks */,
+				B0081BC41F3C5550E91B011244ECBE6A /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +111,28 @@
 				59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		258C9C0CE6FADFAFBE25814015A2EFF3 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				40967E4D38DC65BEFB2D86CC44A85111 /* FastExtension.podspec */,
+				6AF31DB2F427306EF7E1DE9AF54AD8C7 /* LICENSE */,
+				9EA205755855419B205662583A73F653 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		33D5E9857F1C05F32C06F9F5A2006E02 /* FastExtension */ = {
+			isa = PBXGroup;
+			children = (
+				6BE5704CE9165E06EA7FC04FB69E8168 /* AppExtension.swift */,
+				C5547620B57217E34BD4B1BEDAC35761 /* DeviceExtension.swift */,
+				258C9C0CE6FADFAFBE25814015A2EFF3 /* Pod */,
+				B47F6B21D2B3F5DDA6140C0CCAD4AA48 /* Support Files */,
+			);
+			name = FastExtension;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */ = {
@@ -138,51 +160,37 @@
 			path = "Target Support Files/Pods-FastExtention_Tests";
 			sourceTree = "<group>";
 		};
-		6509C28E3E0F4A38A6E6810F297E565D /* Products */ = {
+		6AB86E1D02A4B96C2DF89D64C48937C3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1824D5A4B3D6296A2639EEC76402CE02 /* FastExtention */,
+				CAA8E61E8EF9608C5728072992CC22C7 /* FastExtension */,
 				76F455CAF188CC7B501F41E518B1F6F3 /* Pods-FastExtention_Example */,
 				65B1BEDEB16E95A4802332876D1432E7 /* Pods-FastExtention_Tests */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8978F8A4CCE8628D9CDF7A96884DA346 /* Support Files */ = {
+		A94F67F1C77A9F921D827F9658FCBE35 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5AA104C09BB216EE77B628FAE2A3B1CA /* FastExtention.modulemap */,
-				2F7BC087B89A391D851B4951D8D1A537 /* FastExtention-dummy.m */,
-				42D374307CE39FCAAB14F3C4095AF3E2 /* FastExtention-Info.plist */,
-				9AA643DCD0F9BD34E83FB43A48F07E99 /* FastExtention-prefix.pch */,
-				370F3DDB6B96B48542A5C3B354343A98 /* FastExtention-umbrella.h */,
-				D4189A3BC8FB727F0D93BC8A84311E35 /* FastExtention.debug.xcconfig */,
-				379605C8810915FBD488F35ECF7168D7 /* FastExtention.release.xcconfig */,
+				33D5E9857F1C05F32C06F9F5A2006E02 /* FastExtension */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		B47F6B21D2B3F5DDA6140C0CCAD4AA48 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1548B245CE3006E98504357C0FC065C9 /* FastExtension.modulemap */,
+				BD52CA68A968AFDFD8258E16B4897BF3 /* FastExtension-dummy.m */,
+				76E4D1901F4FD5EF70D4C1C254FC20C2 /* FastExtension-Info.plist */,
+				4B083659DB915A4A25897DA343E2ED75 /* FastExtension-prefix.pch */,
+				3D7DE3679CD7CAEA8C09D1E78373AC70 /* FastExtension-umbrella.h */,
+				A2EE7E44EFB119F1F2BFA4516C0FBAFA /* FastExtension.debug.xcconfig */,
+				024A0B812DCBE965D67B4B4906F42A5A /* FastExtension.release.xcconfig */,
 			);
 			name = "Support Files";
-			path = "Example/Pods/Target Support Files/FastExtention";
-			sourceTree = "<group>";
-		};
-		91EB982C2117958A3EB5A5AC8CDB4B28 /* FastExtention */ = {
-			isa = PBXGroup;
-			children = (
-				195F656CC9AEFF6BDF40E690D71B2E65 /* AppExtension.swift */,
-				7622F865725F9EDF933AE1E9BEB01CAD /* DeviceExtension.swift */,
-				A1B30A1DD19DB52FFE33FAFF87AE5C53 /* Pod */,
-				8978F8A4CCE8628D9CDF7A96884DA346 /* Support Files */,
-			);
-			name = FastExtention;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		A1B30A1DD19DB52FFE33FAFF87AE5C53 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				5216A6C7C0A1A0A62701E7092694E08F /* FastExtention.podspec */,
-				B8A05D0E77CF008C9876A58EC4D22558 /* LICENSE */,
-				7624E5E51522237F2B63180A427D9FFD /* README.md */,
-			);
-			name = Pod;
+			path = "Example/Pods/Target Support Files/FastExtension";
 			sourceTree = "<group>";
 		};
 		C2F1AC1486FCAB5B12F9C6F1F74CF564 /* Targets Support Files */ = {
@@ -198,19 +206,11 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				F2CAC282376367BA55BF7A6A108F1E84 /* Development Pods */,
+				A94F67F1C77A9F921D827F9658FCBE35 /* Development Pods */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				6509C28E3E0F4A38A6E6810F297E565D /* Products */,
+				6AB86E1D02A4B96C2DF89D64C48937C3 /* Products */,
 				C2F1AC1486FCAB5B12F9C6F1F74CF564 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		F2CAC282376367BA55BF7A6A108F1E84 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				91EB982C2117958A3EB5A5AC8CDB4B28 /* FastExtention */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		F30260287045ABFA553CCBF69A28FB9B /* Pods-FastExtention_Example */ = {
@@ -241,60 +241,60 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DC4675CCAC79C07E1D65DE9E11C439D7 /* Headers */ = {
+		9A9124CE8D9840FFD2E6C19FCAD53358 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CEACB0FD9A33DAA9FB55ABA7E86302E /* Pods-FastExtention_Example-umbrella.h in Headers */,
+				E243677E6B9CC1E824EF68094FA472F1 /* FastExtension-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EDDF8AB920A29B6C1B3E392354249F52 /* Headers */ = {
+		FF050A909BE9EE204CD6EEE3FB24B5E6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C05F00F3A9E94DBF1A1AB87A5F8585AF /* FastExtention-umbrella.h in Headers */,
+				A494C9AD99EE300682CD6149F509C30E /* Pods-FastExtention_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3CA52256251A7CF24A7007FDAF1B7D34 /* Pods-FastExtention_Example */ = {
+		18B079C43D95FDD216DC0A32721C3E08 /* FastExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63F5BAFC3F07BEC5A4574C5B2DCBAA24 /* Build configuration list for PBXNativeTarget "Pods-FastExtention_Example" */;
+			buildConfigurationList = 42403225C15CF30894796CD40948A812 /* Build configuration list for PBXNativeTarget "FastExtension" */;
 			buildPhases = (
-				DC4675CCAC79C07E1D65DE9E11C439D7 /* Headers */,
-				806FB66D9BFAD0988C1E57AF17047754 /* Sources */,
-				311F5EE2092B5299D010563084C640E4 /* Frameworks */,
-				EDF0EB7D47739E9399525330FA4F5BFE /* Resources */,
+				9A9124CE8D9840FFD2E6C19FCAD53358 /* Headers */,
+				9823CC34346BAEE7673D585DE3BE4B7F /* Sources */,
+				9B2BEFD757DA7AD40AF65B60259037D6 /* Frameworks */,
+				75F459F420D3CD606EA33A16BB99F778 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1F53AFBD7AA5CE8A125403ED28D1EE73 /* PBXTargetDependency */,
+			);
+			name = FastExtension;
+			productName = FastExtension;
+			productReference = CAA8E61E8EF9608C5728072992CC22C7 /* FastExtension */;
+			productType = "com.apple.product-type.framework";
+		};
+		3CA52256251A7CF24A7007FDAF1B7D34 /* Pods-FastExtention_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80962A64CF5D945B1106DC20A35BA590 /* Build configuration list for PBXNativeTarget "Pods-FastExtention_Example" */;
+			buildPhases = (
+				FF050A909BE9EE204CD6EEE3FB24B5E6 /* Headers */,
+				528C9F6D518FF28890C7D9237D4E6C9B /* Sources */,
+				111734BD76316A716A54F92B75FDBD0E /* Frameworks */,
+				9DB2DBD84DDF1BB87D86334991D49020 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EEA625ADCDACD8753D0620F38C0F5B00 /* PBXTargetDependency */,
 			);
 			name = "Pods-FastExtention_Example";
 			productName = Pods_FastExtention_Example;
 			productReference = 76F455CAF188CC7B501F41E518B1F6F3 /* Pods-FastExtention_Example */;
-			productType = "com.apple.product-type.framework";
-		};
-		8947C2749136007B012AEEAE9D5CC6D5 /* FastExtention */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7DD93A0A796F59F50EC4752BDCC17D0D /* Build configuration list for PBXNativeTarget "FastExtention" */;
-			buildPhases = (
-				EDDF8AB920A29B6C1B3E392354249F52 /* Headers */,
-				3EE21610B2C13B08133A098397B1E8C4 /* Sources */,
-				290CF7881FA4852A0A5E93763CE7D49F /* Frameworks */,
-				DD1DB1390ECD47774AADBDACD71805F0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FastExtention;
-			productName = FastExtention;
-			productReference = 1824D5A4B3D6296A2639EEC76402CE02 /* FastExtention */;
 			productType = "com.apple.product-type.framework";
 		};
 		D4674A63FC9A7EB6A68DFD4B28F463DF /* Pods-FastExtention_Tests */ = {
@@ -334,11 +334,11 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 6509C28E3E0F4A38A6E6810F297E565D /* Products */;
+			productRefGroup = 6AB86E1D02A4B96C2DF89D64C48937C3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8947C2749136007B012AEEAE9D5CC6D5 /* FastExtention */,
+				18B079C43D95FDD216DC0A32721C3E08 /* FastExtension */,
 				3CA52256251A7CF24A7007FDAF1B7D34 /* Pods-FastExtention_Example */,
 				D4674A63FC9A7EB6A68DFD4B28F463DF /* Pods-FastExtention_Tests */,
 			);
@@ -346,6 +346,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		75F459F420D3CD606EA33A16BB99F778 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		86CFF001F140E0B9C4B3DA3CEF56ABDC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -353,14 +360,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD1DB1390ECD47774AADBDACD71805F0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EDF0EB7D47739E9399525330FA4F5BFE /* Resources */ = {
+		9DB2DBD84DDF1BB87D86334991D49020 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -370,21 +370,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3EE21610B2C13B08133A098397B1E8C4 /* Sources */ = {
+		528C9F6D518FF28890C7D9237D4E6C9B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A87942F96CE5A65D11173C74EA5DD1DE /* AppExtension.swift in Sources */,
-				846CAC82BA92D37E4AC68732DAED5AF1 /* DeviceExtension.swift in Sources */,
-				C9F27D11CFDD5C59E13B331547DB58DD /* FastExtention-dummy.m in Sources */,
+				16AE958CE1BE09D18010D9374B2ADE9C /* Pods-FastExtention_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		806FB66D9BFAD0988C1E57AF17047754 /* Sources */ = {
+		9823CC34346BAEE7673D585DE3BE4B7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A57BBB410DA072899B78ADF43895A5B3 /* Pods-FastExtention_Example-dummy.m in Sources */,
+				E37C98DF6E1B2256177B9C18923D8B27 /* AppExtension.swift in Sources */,
+				97ED63756B7F62AB45F1F5CCEC7C3EE1 /* DeviceExtension.swift in Sources */,
+				3DE1D015C63EAA01CCBB083FED79D402 /* FastExtension-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,56 +399,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1F53AFBD7AA5CE8A125403ED28D1EE73 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FastExtention;
-			target = 8947C2749136007B012AEEAE9D5CC6D5 /* FastExtention */;
-			targetProxy = E847AFF6F807DE74722EBEA1375288AF /* PBXContainerItemProxy */;
-		};
 		2520F9F8D5E3BBE67E6209F7C316C379 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-FastExtention_Example";
 			target = 3CA52256251A7CF24A7007FDAF1B7D34 /* Pods-FastExtention_Example */;
 			targetProxy = 56447E872FBA054DFF4F31D7617C4227 /* PBXContainerItemProxy */;
 		};
+		EEA625ADCDACD8753D0620F38C0F5B00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FastExtension;
+			target = 18B079C43D95FDD216DC0A32721C3E08 /* FastExtension */;
+			targetProxy = A115D2D70A482F3F441A947615E77072 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		083BA0004AF9216D856962A332D73709 /* Release */ = {
+		0273DF3FBFC990DE21359A07C9589A5E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 379605C8810915FBD488F35ECF7168D7 /* FastExtention.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FastExtention/FastExtention-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FastExtention/FastExtention-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FastExtention/FastExtention.modulemap";
-				PRODUCT_MODULE_NAME = FastExtention;
-				PRODUCT_NAME = FastExtention;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		48D8CB655C44C8CDEE3FAFD49B0C7DBE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30CDF3C71A20E2BA9913D3FBF87B4398 /* Pods-FastExtention_Example.debug.xcconfig */;
+			baseConfigurationReference = 0CD77DA144697EB5FE9085457E45E557 /* Pods-FastExtention_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -474,10 +442,43 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
+		};
+		73E06F38427E453BDD24CCD0D8FC2DD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 024A0B812DCBE965D67B4B4906F42A5A /* FastExtension.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FastExtension/FastExtension-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FastExtension/FastExtension-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FastExtension/FastExtension.modulemap";
+				PRODUCT_MODULE_NAME = FastExtension;
+				PRODUCT_NAME = FastExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		7EE7A78859F657F6BEFC651185B43192 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -574,9 +575,9 @@
 			};
 			name = Debug;
 		};
-		9784C0EA7A2ED0AA3250D7FE72DA9563 /* Debug */ = {
+		AEDB0EA0D62F0D5C4531372486142496 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4189A3BC8FB727F0D93BC8A84311E35 /* FastExtention.debug.xcconfig */;
+			baseConfigurationReference = A2EE7E44EFB119F1F2BFA4516C0FBAFA /* FastExtension.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -587,14 +588,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FastExtention/FastExtention-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FastExtention/FastExtention-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/FastExtension/FastExtension-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FastExtension/FastExtension-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FastExtention/FastExtention.modulemap";
-				PRODUCT_MODULE_NAME = FastExtention;
-				PRODUCT_NAME = FastExtention;
+				MODULEMAP_FILE = "Target Support Files/FastExtension/FastExtension.modulemap";
+				PRODUCT_MODULE_NAME = FastExtension;
+				PRODUCT_NAME = FastExtension;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -604,40 +605,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		A29325DBADBD51B6FF5D1F874CCE5C87 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CD77DA144697EB5FE9085457E45E557 /* Pods-FastExtention_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-FastExtention_Example/Pods-FastExtention_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-FastExtention_Example/Pods-FastExtention_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		D299434AB35E7FD6F7921C8EF24742FF /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -705,6 +672,39 @@
 			};
 			name = Debug;
 		};
+		E11533EDA3407AA350D5EB22F8115895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30CDF3C71A20E2BA9913D3FBF87B4398 /* Pods-FastExtention_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-FastExtention_Example/Pods-FastExtention_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FastExtention_Example/Pods-FastExtention_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		F3D3EEBB010A851B9BDB6E4B893C5A23 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CCA1C7E38DD86986F88609925E0330BA /* Pods-FastExtention_Tests.release.xcconfig */;
@@ -742,6 +742,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		42403225C15CF30894796CD40948A812 /* Build configuration list for PBXNativeTarget "FastExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEDB0EA0D62F0D5C4531372486142496 /* Debug */,
+				73E06F38427E453BDD24CCD0D8FC2DD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -760,20 +769,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63F5BAFC3F07BEC5A4574C5B2DCBAA24 /* Build configuration list for PBXNativeTarget "Pods-FastExtention_Example" */ = {
+		80962A64CF5D945B1106DC20A35BA590 /* Build configuration list for PBXNativeTarget "Pods-FastExtention_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				48D8CB655C44C8CDEE3FAFD49B0C7DBE /* Debug */,
-				A29325DBADBD51B6FF5D1F874CCE5C87 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7DD93A0A796F59F50EC4752BDCC17D0D /* Build configuration list for PBXNativeTarget "FastExtention" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9784C0EA7A2ED0AA3250D7FE72DA9563 /* Debug */,
-				083BA0004AF9216D856962A332D73709 /* Release */,
+				E11533EDA3407AA350D5EB22F8115895 /* Debug */,
+				0273DF3FBFC990DE21359A07C9589A5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

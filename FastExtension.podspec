@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'FastExtention'
+  s.name             = 'FastExtension'
   s.version          = '0.1.0'
   s.summary          = 'Useful swift extensions'
 
@@ -21,15 +21,15 @@ Pod::Spec.new do |s|
   Useful swift extensions
                        DESC
 
-  s.homepage         = 'https://github.com/zhangpan/FastExtention'
+  s.homepage         = 'https://github.com/Pandaliya/FastExtension'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'zhangpan' => 'zhangpan@cls.cn' }
-  s.source           = { :git => 'https://github.com/zhangpan/FastExtention.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/Pandaliya/FastExtension.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '10.0'
   s.swift_versions = ['5.0']
 
-  s.source_files = 'FastExtention/Classes/**/*.swift'
+  s.source_files = 'FastExtension/Classes/**/*.swift'
   s.frameworks = 'UIKit', 'Foundation'
   
 end

@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double FastExtentionVersionNumber;
-FOUNDATION_EXPORT const unsigned char FastExtentionVersionString[];
+FOUNDATION_EXPORT double FastExtensionVersionNumber;
+FOUNDATION_EXPORT const unsigned char FastExtensionVersionString[];
 

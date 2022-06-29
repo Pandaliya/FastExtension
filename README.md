@@ -1,9 +1,9 @@
-# FastExtention
+# FastExtension
 
-[![CI Status](https://img.shields.io/travis/zhangpan/FastExtention.svg?style=flat)](https://travis-ci.org/zhangpan/FastExtention)
-[![Version](https://img.shields.io/cocoapods/v/FastExtention.svg?style=flat)](https://cocoapods.org/pods/FastExtention)
-[![License](https://img.shields.io/cocoapods/l/FastExtention.svg?style=flat)](https://cocoapods.org/pods/FastExtention)
-[![Platform](https://img.shields.io/cocoapods/p/FastExtention.svg?style=flat)](https://cocoapods.org/pods/FastExtention)
+[![CI Status](https://img.shields.io/travis/zhangpan/FastExtension.svg?style=flat)](https://travis-ci.org/zhangpan/FastExtension)
+[![Version](https://img.shields.io/cocoapods/v/FastExtension.svg?style=flat)](https://cocoapods.org/pods/FastExtension)
+[![License](https://img.shields.io/cocoapods/l/FastExtension.svg?style=flat)](https://cocoapods.org/pods/FastExtension)
+[![Platform](https://img.shields.io/cocoapods/p/FastExtension.svg?style=flat)](https://cocoapods.org/pods/FastExtension)
 
 ## Example
 
@@ -17,7 +17,7 @@ FastExtention is available through [CocoaPods](https://cocoapods.org). To instal
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'FastExtention'
+pod 'FastExtension'
 ```
 
 ## Author

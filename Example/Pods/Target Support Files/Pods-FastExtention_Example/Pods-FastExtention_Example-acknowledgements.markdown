@@ -1,7 +1,7 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## FastExtention
+## FastExtension
 
 Copyright (c) 2022 zhangpan <zhangpan@cls.cn>
 

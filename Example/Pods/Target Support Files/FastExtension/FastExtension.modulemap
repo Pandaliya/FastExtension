@@ -1,0 +1,6 @@
+framework module FastExtension {
+  umbrella header "FastExtension-umbrella.h"
+
+  export *
+  module * { export * }
+}
