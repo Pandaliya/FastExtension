@@ -1,0 +1,16 @@
+PODS:
+  - FastExtention (0.1.0)
+
+DEPENDENCIES:
+  - FastExtention (from `../`)
+
+EXTERNAL SOURCES:
+  FastExtention:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FastExtention: 42c445a344cde8fffa52609805501d45dd055a5a
+
+PODFILE CHECKSUM: 9bc6ecf11de9547e94d3aaa057fe5a79ca6b6044
+
+COCOAPODS: 1.11.2

@@ -1,0 +1,30 @@
+{
+  "name": "FastExtention",
+  "version": "0.1.0",
+  "summary": "Useful swift extensions",
+  "description": "Useful swift extensions",
+  "homepage": "https://github.com/zhangpan/FastExtention",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "zhangpan": "zhangpan@cls.cn"
+  },
+  "source": {
+    "git": "https://github.com/zhangpan/FastExtention.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "swift_versions": [
+    "5.0"
+  ],
+  "source_files": "FastExtention/Classes/**/*.swift",
+  "frameworks": [
+    "UIKit",
+    "Foundation"
+  ],
+  "swift_version": "5.0"
+}
