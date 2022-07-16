@@ -9,5 +9,9 @@ extension FastExtensionWrapper where Base: UIApplication {
     public static var appVersion:String {
         return ""
     }
+    
+    public static var bundleIdentifier:String {
+        return Bundle.main.bundleIdentifier ?? "null"
+    }
 }
 

@@ -16,6 +16,7 @@ public extension FastExtensionWrapper where Base: UIDevice {
         return String(cString: machine)
     }
     
+    /// 设备型号，如 "iPhone8,1" (iPhone 6s)
     static var platform:String {
         return systemInfo(name: "hw.machine")
     }
