@@ -11,8 +11,35 @@ import UIKit
 public protocol ExampleCase {
     var title: String { get set}
     var callBack: (()->())? {get set}
+    var controller: UIViewController? { get }
+    var hasNext: Bool { get }
     func caseAction() -> Bool
+    
+    func configTableView(tableView: UITableView) -> Bool
+    func configView(view: UIView) -> Bool
 }
+
+// 可选方法实现
+public extension ExampleCase {
+    
+    var controller: UIViewController? { return nil }
+    var hasNext: Bool { return false }
+    
+    func configTableView(tableView: UITableView) -> Bool { return false }
+    func configView(view: UIView) -> Bool { return false }
+    func routerToContoller(from: UIViewController) {
+        guard let vc = self.controller else {
+            return
+        }
+        
+        if let n = from.navigationController {
+            n.pushViewController(vc, animated: true)
+        } else {
+            from.present(from, animated: true)
+        }
+    }
+}
+
 
 public protocol ExampleCaseSet {
     var setTitle: String? { get set }
@@ -67,6 +94,12 @@ open class ExampleCaseTableController: UITableViewController {
             cell.contentConfiguration = content
         } else {
             cell.textLabel?.text = cs.title
+        }
+        
+        if cs.hasNext {
+            cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+        } else {
+            cell.accessoryType = .none
         }
         
         return cell
