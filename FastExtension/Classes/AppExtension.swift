@@ -13,5 +13,14 @@ extension FastExtensionWrapper where Base: UIApplication {
     public static var bundleIdentifier:String {
         return Bundle.main.bundleIdentifier ?? "null"
     }
+    
+    public static func toAppSetting() -> Bool{
+        if let url = URL(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(url)
+            return true
+        }
+        
+        return false
+    }
 }
 
