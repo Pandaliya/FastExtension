@@ -16,3 +16,7 @@ public extension FastExtensionWrapper where Base: UITableView {
         }
     }
 }
+
+public extension FastExtensionWrapper where Base: UITableViewCell {
+    
+}
