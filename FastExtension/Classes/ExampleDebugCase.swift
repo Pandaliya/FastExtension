@@ -17,6 +17,7 @@ public protocol ExampleCase {
     
     func configTableView(tableView: UITableView) -> Bool
     func configView(view: UIView) -> Bool
+    func controllerDidLayout()->Bool
 }
 
 // 可选方法实现
@@ -27,8 +28,14 @@ public extension ExampleCase {
     
     func configTableView(tableView: UITableView) -> Bool { return false }
     func configView(view: UIView) -> Bool { return false }
+    func controllerDidLayout() -> Bool { return false }
     func routerToContoller(from: UIViewController) {
         guard let vc = self.controller else {
+            return
+        }
+        
+        if let navi = from as? UINavigationController {
+            navi.pushViewController(vc, animated: true)
             return
         }
         

@@ -37,7 +37,12 @@ extension UIView: FastExtensionCompatible { }
 extension UITableViewCell: FastExtensionCompatible { }
 extension UITableView: FastExtensionCompatible { }
 extension UIAlertController: FastExtensionCompatible { }
-
 extension Bundle: FastExtensionCompatible { }
+
+
+// MARK: - FAST Cloures
+public typealias FastResult = (_ result: Bool, _ errMsg: String?) -> Void
+public typealias FastFinished = (_ response: Any?, _ errMsg: String?) -> Void
+public typealias FastCodeFinished = (_ response: Decodable?, _ errMsg: String?) -> Void
 
 
