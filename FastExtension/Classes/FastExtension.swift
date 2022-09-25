@@ -34,8 +34,6 @@ extension UIDevice: FastExtensionCompatible { }
 extension UIColor: FastExtensionCompatible { }
 extension UIImage: FastExtensionCompatible { }
 extension UIView: FastExtensionCompatible { }
-extension UITableViewCell: FastExtensionCompatible { }
-extension UITableView: FastExtensionCompatible { }
 extension UIAlertController: FastExtensionCompatible { }
 extension Bundle: FastExtensionCompatible { }
 
