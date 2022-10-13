@@ -29,13 +29,15 @@ extension FastExtensionCompatible {
     }
 }
 
-extension UIApplication: FastExtensionCompatible { }
-extension UIDevice: FastExtensionCompatible { }
-extension UIColor: FastExtensionCompatible { }
-extension UIImage: FastExtensionCompatible { }
-extension UIView: FastExtensionCompatible { }
-extension UIAlertController: FastExtensionCompatible { }
-extension Bundle: FastExtensionCompatible { }
+//extension UIApplication: FastExtensionCompatible { }
+//extension UIDevice: FastExtensionCompatible { }
+//extension UIColor: FastExtensionCompatible { }
+//extension UIImage: FastExtensionCompatible { }
+//extension UIView: FastExtensionCompatible { }
+//extension UIAlertController: FastExtensionCompatible { }
+//extension Bundle: FastExtensionCompatible { }
+
+extension NSObject: FastExtensionCompatible { }
 
 
 // MARK: - FAST Cloures

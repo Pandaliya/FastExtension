@@ -31,6 +31,28 @@ public extension FastExtensionWrapper where Base: UIView {
         base.layer.mask = fieldLayer
     }
     
+    var safeAreaTop: CGFloat {
+        if #available(iOS 11.0, *) {
+            return base.safeAreaInsets.top
+        } else {
+            return 0
+        }
+    }
+    
+    var safeAreaBottom: CGFloat {
+        if #available(iOS 11.0, *) {
+            return base.safeAreaInsets.bottom
+        } else {
+            return 0
+        }
+    }
+    
+    // MARK: Frame
+    func updateHeight(_ height: CGFloat) {
+        var frame = base.frame
+        frame.size.height = height
+        base.frame = frame
+    }
     
 }
 
