@@ -32,4 +32,45 @@ public extension FastExtensionWrapper where Base: UIWindow {
         }
     }
     
+    static var topViewController: UIViewController? {
+        guard let b = Base.fe.currentWindow else {
+            return nil
+        }
+        
+        var current = b.rootViewController
+        debugPrint("current wai :\(String(describing: current))")
+        while current?.presentedViewController != nil {
+            current = current?.presentedViewController
+        }
+        
+        if let nav = current as? UINavigationController {
+            current = nav.topViewController
+        } else if let tab = current as? UITabBarController{
+            current = tab.selectedViewController
+            if let nav = current as? UINavigationController {
+                current = nav.topViewController
+            }
+        }
+        return current
+    }
+    
+    static func showController(
+        _ controller: UIViewController,
+        from: UIViewController? = nil,
+        push: Bool = true,
+        animate: Bool = true) -> Bool
+    {
+        guard let fromVC = from ?? Base.fe.topViewController else {
+            return false
+        }
+        
+        if let navi = fromVC.navigationController, push {
+            navi.pushViewController(controller, animated: true)
+        } else {
+            fromVC.present(controller, animated: true)
+        }
+        
+        return true
+    }
+    
 }

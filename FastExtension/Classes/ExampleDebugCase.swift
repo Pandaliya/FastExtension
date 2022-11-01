@@ -8,16 +8,23 @@
 import Foundation
 import UIKit
 
+/// 测试用例协议
 public protocol ExampleCase {
     var title: String { get set}
     var callBack: (()->())? {get set}
-    var controller: UIViewController? { get }
     var hasNext: Bool { get }
     func caseAction() -> Bool
     
+    // UI Case
+    var controller: UIViewController? { get }
     func configTableView(tableView: UITableView) -> Bool
     func configView(view: UIView) -> Bool
     func controllerDidLayout()->Bool
+    
+    // Func Case
+    var funcCallback: ((FEFuncCaseTableController, Int)->(Bool))? { get }
+    var funcCaseTitles: [String] { get }
+    var funcController: FEFuncCaseTableController { get }
 }
 
 // 可选方法实现
@@ -29,25 +36,29 @@ public extension ExampleCase {
     func configTableView(tableView: UITableView) -> Bool { return false }
     func configView(view: UIView) -> Bool { return false }
     func controllerDidLayout() -> Bool { return false }
-    func routerToContoller(from: UIViewController) {
-        guard let vc = self.controller else {
-            return
+    
+    func routerToContoller(from: UIViewController? = nil) {
+        if let c = self.controller {
+            let _ = UIWindow.fe.showController(c, from: from)
         }
-        
-        if let navi = from as? UINavigationController {
-            navi.pushViewController(vc, animated: true)
-            return
-        }
-        
-        if let n = from.navigationController {
-            n.pushViewController(vc, animated: true)
-        } else {
-            from.present(from, animated: true)
-        }
+    }
+    
+    func routerToFuncController(from: UIViewController? = nil) {
+        let _ = UIWindow.fe.showController(self.funcController, from: from)
+    }
+    
+    var funcCaseTitles: [String] { return [] }
+    var funcCallback: ((FEFuncCaseTableController, Int)->(Bool))? { return nil }
+    var funcController: FEFuncCaseTableController {
+        return FEFuncCaseTableController.init(
+            titles: self.funcCaseTitles,
+            callBack: self.funcCallback,
+            title: self.title
+        )
     }
 }
 
-
+/// 测试用例集合协议
 public protocol ExampleCaseSet {
     var setTitle: String? { get set }
     var cases: [ExampleCase] { get set }
@@ -228,4 +239,61 @@ class FECaseSetHeader: UITableViewHeaderFooterView {
         return btn
     }()
 }
+
+open class FEFuncCaseTableController: UITableViewController {
+    var rowTitles:[String] = []
+    var rowCallback: ((FEFuncCaseTableController, Int)->(Bool))? = nil
+    
+    public convenience init(titles:[String], callBack: ((FEFuncCaseTableController, Int)->(Bool))? = nil, title:String="调试项目") {
+        self.init(style: .plain)
+        self.rowTitles = titles
+        self.rowCallback = callBack
+        self.title = title
+    }
+    
+    // MARK: - Life
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViews()
+        setupConstraints()
+    }
+    
+    // MARK: - Actions
+    
+    // MARK: - Datas
+    
+    // MARK: - Views
+    func setupViews() {
+        self.tableView.rowHeight = 44.0
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "FESubCaseTableControllerCell")
+    }
+    
+    func setupConstraints() {
+        
+    }
+    
+    open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.rowTitles.count
+    }
+    
+    open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FESubCaseTableControllerCell", for: indexPath)
+        if indexPath.row < self.rowTitles.count {
+            cell.textLabel?.text = self.rowTitles[indexPath.row]
+        }
+        return cell
+    }
+    
+    
+    open override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if let c = self.rowCallback {
+            let _ = c(self, indexPath.row)
+        }
+    }
+    
+    
+    // MARK: - Lazy
+}
+
 

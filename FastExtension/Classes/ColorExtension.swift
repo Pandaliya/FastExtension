@@ -8,6 +8,8 @@
 import Foundation
 
 extension FastExtensionWrapper where Base: UIColor {
+    
+    /// 生成随机颜色
     public static var randomColor: UIColor {
         return UIColor.init(
             red:CGFloat(arc4random_uniform(255))/CGFloat(255.0),
