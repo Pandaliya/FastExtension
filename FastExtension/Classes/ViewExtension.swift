@@ -54,5 +54,10 @@ public extension FastExtensionWrapper where Base: UIView {
         base.frame = frame
     }
     
+    func transformAngle(_ angle: CGFloat) {
+        let ag = angle/180.0 * .pi
+        base.transform = CGAffineTransformMakeRotation(ag)
+    }
+    
 }
 

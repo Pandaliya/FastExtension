@@ -22,6 +22,7 @@ public protocol ExampleCase {
     func controllerDidLayout()->Bool
     
     // Func Case
+    var funcIndex: Int { get }
     var funcCallback: ((FEFuncCaseTableController, Int)->(Bool))? { get }
     var funcCaseTitles: [String] { get }
     var funcController: FEFuncCaseTableController { get }
@@ -30,23 +31,27 @@ public protocol ExampleCase {
 // 可选方法实现
 public extension ExampleCase {
     
-    var controller: UIViewController? { return nil }
-    var hasNext: Bool { return false }
+    var controller: UIViewController? {
+        return ExampleCaseViewController.init(ecase: self)
+    }
+    
+    var hasNext: Bool { return true }
     
     func configTableView(tableView: UITableView) -> Bool { return false }
     func configView(view: UIView) -> Bool { return false }
     func controllerDidLayout() -> Bool { return false }
     
-    func routerToContoller(from: UIViewController? = nil) {
+    func routerToContoller(from: UIViewController? = nil, push: Bool = true) {
         if let c = self.controller {
-            let _ = UIWindow.fe.showController(c, from: from)
+            let _ = UIWindow.fe.showController(c, from: from, push: push)
         }
     }
     
-    func routerToFuncController(from: UIViewController? = nil) {
-        let _ = UIWindow.fe.showController(self.funcController, from: from)
+    func routerToFuncController(from: UIViewController? = nil, push: Bool = true) {
+        let _ = UIWindow.fe.showController(self.funcController, from: from, push: push)
     }
     
+    var funcIndex: Int { return 0 }
     var funcCaseTitles: [String] { return [] }
     var funcCallback: ((FEFuncCaseTableController, Int)->(Bool))? { return nil }
     var funcController: FEFuncCaseTableController {
@@ -72,6 +77,13 @@ open class ExampleCaseTableController: UITableViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+    }
+    
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let nav = self.navigationController {
+            nav.setNavigationBarHidden(self.navigationBarHidden, animated: animated)
+        }
     }
     
     func setupViews() {
@@ -165,6 +177,8 @@ open class ExampleCaseTableController: UITableViewController {
 
 class FECaseSetHeader: UITableViewHeaderFooterView {
     
+    let arrow: CGFloat = 16.0
+    
     var foldCallBack: (()->())?
     var caseSet: ExampleCaseSet? = nil
     var framedSubviews: Bool = false
@@ -172,7 +186,11 @@ class FECaseSetHeader: UITableViewHeaderFooterView {
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         let v = UIView()
-        v.backgroundColor = UIColor.init(white: 0.96, alpha: 1.0)
+        if #available(iOS 13.0, *) {
+            v.backgroundColor = UIColor.systemGroupedBackground
+        } else {
+            v.backgroundColor = UIColor.init(white: 0.95, alpha: 1.0)
+        }
         self.backgroundView = v
         self.addSubview(titleLabel)
         self.addSubview(markImageView)
@@ -191,6 +209,7 @@ class FECaseSetHeader: UITableViewHeaderFooterView {
         
         self.caseSet = cs
         self.titleLabel.text = cs.setTitle
+        self.markImageView.fe.transformAngle(self.caseSet!.isFold ? 0.0 : 90)
     }
     
     @objc func actionTouched() {
@@ -199,6 +218,7 @@ class FECaseSetHeader: UITableViewHeaderFooterView {
         }
         
         self.caseSet!.isFold = !self.caseSet!.isFold
+        self.markImageView.fe.transformAngle(self.caseSet!.isFold ? 0.0 : 90)
         if let fc = self.foldCallBack {
             fc()
         }
@@ -206,13 +226,12 @@ class FECaseSetHeader: UITableViewHeaderFooterView {
     
     override func layoutSubviews() {
         let height = self.frame.size.height
-        let width = self.frame.size.width
-        self.titleLabel.frame = CGRect(x: 16, y: 0, width: 200, height: height)
+        self.titleLabel.frame = CGRect(x: 20, y: 0, width: 200, height: height)
         self.markImageView.frame = CGRect(
-            x: width - 40 - 16,
-            y: (height-40)/2.0,
-            width: 40,
-            height: 40
+            x: 4,
+            y: (height-arrow)/2.0,
+            width: arrow,
+            height: arrow
         )
         self.actionButton.frame = self.bounds
         
@@ -221,14 +240,18 @@ class FECaseSetHeader: UITableViewHeaderFooterView {
     
     lazy var titleLabel: UILabel = {
         let tl = UILabel()
-        tl.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        tl.textColor = .black
+        tl.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        if #available(iOS 13.0, *) {
+            tl.textColor = .systemGray
+        } else {
+            tl.textColor = .black
+        }
         return tl
     } ()
     
     lazy var markImageView: UIImageView = {
         let imgv = UIImageView()
-        imgv.contentMode = .center
+        imgv.contentMode = .scaleAspectFit
         imgv.clipsToBounds = true
         return imgv
     }()
@@ -249,6 +272,7 @@ open class FEFuncCaseTableController: UITableViewController {
         self.rowTitles = titles
         self.rowCallback = callBack
         self.title = title
+        self.hidesBottomBarWhenPushed = true
     }
     
     // MARK: - Life
@@ -264,7 +288,7 @@ open class FEFuncCaseTableController: UITableViewController {
     
     // MARK: - Views
     func setupViews() {
-        self.tableView.rowHeight = 44.0
+        self.tableView.rowHeight = 49.0
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "FESubCaseTableControllerCell")
     }
     
@@ -294,6 +318,35 @@ open class FEFuncCaseTableController: UITableViewController {
     
     
     // MARK: - Lazy
+}
+
+// 用例容器视图
+open class ExampleCaseViewController: UIViewController {
+    var ecase: ExampleCase!
+    
+    public convenience init(ecase: ExampleCase) {
+        self.init()
+        self.hidesBottomBarWhenPushed = true
+        self.ecase = ecase
+    }
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        if #available(iOS 13.0, *) {
+            self.view.backgroundColor = UIColor.systemBackground
+        } else {
+            self.view.backgroundColor = UIColor.white
+        }
+        self.navigationItem.title = self.ecase.title
+        let _ = self.ecase.configView(view: self.view)
+    }
+    
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let nav = self.navigationController {
+            nav.setNavigationBarHidden(self.navigationBarHidden, animated: animated)
+        }
+    }
 }
 
 

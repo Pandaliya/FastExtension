@@ -8,6 +8,13 @@
 import Foundation
 
 public extension FastExtensionWrapper where Base: NSString {
+    
+    /// 计算字符串Size
+    /// - Parameters:
+    ///   - font: 展示font
+    ///   - maxW: 最大宽度
+    ///   - maxH: 最大高度
+    /// - Returns: 字符串size
     func contentSize(
         font:UIFont,
         maxW: CGFloat = CGFloat.greatestFiniteMagnitude,
@@ -34,6 +41,12 @@ public extension FastExtensionWrapper where Base: NSString {
 }
 
 public extension FastExtensionWrapper where Base: NSAttributedString {
+    
+    /// 属性字符串size
+    /// - Parameters:
+    ///   - maxW: 最大宽度
+    ///   - maxH: 最大宽度
+    /// - Returns: size
     func contentSize(
         maxW: CGFloat = CGFloat.greatestFiniteMagnitude,
         maxH: CGFloat = CGFloat.greatestFiniteMagnitude) -> CGSize

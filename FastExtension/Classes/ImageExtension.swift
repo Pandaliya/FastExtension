@@ -61,6 +61,18 @@ public extension FastExtensionWrapper where Base: UIImage {
             return UIImage.init(named: name, in: smb, compatibleWith: nil)
         }
     }
+    
+    func tintedImage(_ color: UIColor?) -> UIImage {
+        guard let c = color else { return base }
+        
+        if #available(iOS 13.0, *) {
+            return base.withTintColor(c, renderingMode: .alwaysTemplate)
+        } else {
+            let img = base.withRenderingMode(.alwaysTemplate)
+            return img
+        }
+    }
+    
 }
 
 

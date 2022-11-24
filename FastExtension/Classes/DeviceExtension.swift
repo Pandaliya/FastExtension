@@ -16,6 +16,11 @@ public extension FastExtensionWrapper where Base: UIDevice {
         return String(cString: machine)
     }
     
+    /// 是否为手机
+    static var isPhone: Bool {
+        return Base.current.userInterfaceIdiom == .phone
+    }
+    
     /// 设备型号，如 "iPhone8,1" (iPhone 6s)
     static var platform:String {
         return systemInfo(name: "hw.machine")

@@ -15,6 +15,11 @@ public extension FastExtensionWrapper where Base: UITableView {
             
         }
     }
+    
+    func clearBack() {
+        base.backgroundColor = .clear
+        base.backgroundView = nil
+    }
 }
 
 public extension FastExtensionWrapper where Base: UITableViewCell {

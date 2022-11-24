@@ -7,34 +7,24 @@
 //
 
 import UIKit
+import FastExtension
 
-class ViewController: UITableViewController {
+class ViewController: ExampleCaseTableController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Fase Extension"
+        
+        self.testSets = [
+            ExtensionSet.toolsSet,
+            ExtensionSet.uiSet,
+            ExtensionSet.nsSet
+        ]
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-}
-
-extension ViewController {
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
 }
 
