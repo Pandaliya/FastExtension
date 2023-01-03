@@ -69,6 +69,7 @@ public extension FastExtensionWrapper where Base: UIImage {
             return base.withTintColor(c, renderingMode: .alwaysTemplate)
         } else {
             let img = base.withRenderingMode(.alwaysTemplate)
+            
             return img
         }
     }

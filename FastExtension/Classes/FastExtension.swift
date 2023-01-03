@@ -15,7 +15,7 @@ public struct FastExtensionWrapper<Base> {
     }
 }
 
-public protocol FastExtensionCompatible: AnyObject { }
+public protocol FastExtensionCompatible { }
 
 extension FastExtensionCompatible {
     public var fe: FastExtensionWrapper<Self> {
@@ -28,14 +28,6 @@ extension FastExtensionCompatible {
         set {}
     }
 }
-
-//extension UIApplication: FastExtensionCompatible { }
-//extension UIDevice: FastExtensionCompatible { }
-//extension UIColor: FastExtensionCompatible { }
-//extension UIImage: FastExtensionCompatible { }
-//extension UIView: FastExtensionCompatible { }
-//extension UIAlertController: FastExtensionCompatible { }
-//extension Bundle: FastExtensionCompatible { }
 
 extension NSObject: FastExtensionCompatible { }
 

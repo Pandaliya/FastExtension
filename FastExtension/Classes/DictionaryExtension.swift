@@ -7,11 +7,6 @@
 
 import Foundation
 
-//public extension FastExtensionWrapper where Base:  {
-//    
-//}
-
-
 public extension Dictionary {
     func prettyDebugPrint() {
         #if DEBUG
@@ -26,21 +21,3 @@ public extension Dictionary {
         #endif
     }
 }
-
-
-/* Swift 扩展添加关联对象
-struct AssociatedKeys {
-    static var testNameKey: String = "testNameKey"
-}
-
-extension UIView {
-    public var testName: String? {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.testNameKey) as? String
-        }
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.testNameKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
-}
- */
