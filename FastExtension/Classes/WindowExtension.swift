@@ -20,6 +20,10 @@ public extension FastExtensionWrapper where Base: UIWindow {
         return 20
     }
     
+    static var navigationHeight:CGFloat {
+        return self.statusHeight + 44
+    }
+    
     static var currentWindow: UIWindow? {
         if #available(iOS 13, *) {
             return UIApplication.shared.connectedScenes
@@ -38,7 +42,6 @@ public extension FastExtensionWrapper where Base: UIWindow {
         }
         
         var current = b.rootViewController
-        debugPrint("current wai :\(String(describing: current))")
         while current?.presentedViewController != nil {
             current = current?.presentedViewController
         }

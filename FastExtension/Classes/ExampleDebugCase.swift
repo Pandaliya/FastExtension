@@ -19,6 +19,7 @@ public protocol ExampleCase {
     var controller: UIViewController? { get }
     func configTableView(tableView: UITableView) -> Bool
     func configView(view: UIView) -> Bool
+    func controllerViewDidLoad(controller: UIViewController) -> Bool
     func controllerDidLayout()->Bool
     
     // Func Case
@@ -38,8 +39,9 @@ public extension ExampleCase {
     var hasNext: Bool { return true }
     
     func configTableView(tableView: UITableView) -> Bool { return false }
-    func configView(view: UIView) -> Bool { return false }
     func controllerDidLayout() -> Bool { return false }
+    func configView(view: UIView) -> Bool { return false }
+    func controllerViewDidLoad(controller: UIViewController) -> Bool { return false }
     
     func routerToContoller(from: UIViewController? = nil, push: Bool = true) {
         if let c = self.controller {
@@ -69,6 +71,22 @@ public protocol ExampleCaseSet {
     var cases: [ExampleCase] { get set }
     var isFold: Bool { get set }
     var foldImage: UIImage? { get }
+}
+
+open class FasetExampleCaseSet: ExampleCaseSet {
+    public var setTitle: String? = nil
+    public var cases: [ExampleCase] = []
+    
+    open var isFold: Bool = false
+    public var foldImage: UIImage? {
+        return nil
+    }
+    
+    public convenience init(title:String = "", fold:Bool = false) {
+        self.init()
+        self.setTitle = title
+        self.isFold = fold
+    }
 }
 
 open class ExampleCaseTableController: UITableViewController {
@@ -338,6 +356,10 @@ open class ExampleCaseViewController: UIViewController {
             self.view.backgroundColor = UIColor.white
         }
         self.navigationItem.title = self.ecase.title
+        if #available(iOS 11.0, *) {
+            self.navigationItem.largeTitleDisplayMode = .never
+        }
+        let _ = self.ecase.controllerViewDidLoad(controller: self)
         let _ = self.ecase.configView(view: self.view)
     }
     

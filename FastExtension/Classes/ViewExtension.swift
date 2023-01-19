@@ -7,7 +7,39 @@
 
 import Foundation
 
+public extension UIView {
+    func debugPrintHierarchy(level:String = "") {
+        
+        debugPrint("\(level)\(type(of: self)) frame: \(self.frame)")
+        guard self.subviews.isEmpty == false else {
+            return
+        }
+        let nextLevel = "\(level)-"
+        for v in self.subviews {
+            v.debugPrintHierarchy(level: nextLevel)
+        }
+        return
+    }
+}
+
+
 public extension FastExtensionWrapper where Base: UIView {
+    
+    var safeAreaTop: CGFloat {
+        if #available(iOS 11.0, *) {
+            return base.safeAreaInsets.top
+        } else {
+            return 0
+        }
+    }
+    
+    var safeAreaBottom: CGFloat {
+        if #available(iOS 11.0, *) {
+            return base.safeAreaInsets.bottom
+        } else {
+            return 0
+        }
+    }
     
     func cornered(corners:UIRectCorner?, size: CGFloat) {
         guard let corners = corners else {
@@ -31,21 +63,19 @@ public extension FastExtensionWrapper where Base: UIView {
         base.layer.mask = fieldLayer
     }
     
-    var safeAreaTop: CGFloat {
-        if #available(iOS 11.0, *) {
-            return base.safeAreaInsets.top
-        } else {
-            return 0
+    
+    func fixedSnapshotImage() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(base.frame.size, false, UIScreen.main.scale);
+        if let context = UIGraphicsGetCurrentContext(){
+            base.layer.render(in: context)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return image
         }
+        
+        return nil
     }
     
-    var safeAreaBottom: CGFloat {
-        if #available(iOS 11.0, *) {
-            return base.safeAreaInsets.bottom
-        } else {
-            return 0
-        }
-    }
     
     // MARK: Frame
     func updateHeight(_ height: CGFloat) {

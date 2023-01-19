@@ -14,6 +14,8 @@ public enum FastSandboxType: Int {
 }
 
 public extension FastExtensionWrapper where Base: FileManager {
+    
+    /// 沙盒Document目录路径
     static var documentPath: String {
         return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last ?? ""
     }
@@ -26,6 +28,7 @@ public extension FastExtensionWrapper where Base: FileManager {
         NSTemporaryDirectory()
     }
     
+    
     static func absolutePath(relPath:String, type: FastSandboxType = .document) -> String {
         switch type {
         case .document:
@@ -35,6 +38,47 @@ public extension FastExtensionWrapper where Base: FileManager {
         case .temp:
             return Base.fe.tempPath + "\(relPath)"
         }
+    }
+    
+    /// 判断目录是否存在如果不存在则创建
+    /// - Parameter url: 目录路径
+    /// - Returns: true: 目录存在或创建成功
+    func createDirectoryIfNotExit(url: URL) -> Bool {
+        var isDir: ObjCBool = false
+        if base.fileExists(atPath: url.path, isDirectory: &isDir), isDir.boolValue == true {
+            return true
+        }
+        
+        do {
+            let res = try base.createDirectory(at: url, withIntermediateDirectories: true)
+            return true
+        } catch {
+            debugPrint(" error: \(error)")
+        }
+        return false
+    }
+    
+    /// 获取目录中的所有文件（不包括文件夹）
+    /// - Parameters:
+    ///   - atDirectory: 目录地址
+    ///   - sort: 是否排序
+    /// - Returns: 文件路径数组
+    func allFilePath(atDirectory: String, sort: Bool = true) -> [String] {
+        var filepaths: [String] = []
+        do {
+            let nameArray = try base.contentsOfDirectory(atPath: atDirectory)
+            for name in nameArray {
+                let fullPath = "\(atDirectory)/\(name)"
+                var isDir: ObjCBool = true
+                if base.fileExists(atPath: fullPath, isDirectory: &isDir), isDir.boolValue == false {
+                    filepaths.append(fullPath)
+                }
+            }
+        } catch {
+            debugPrint(" error: \(error)")
+        }
+        
+        return filepaths
     }
     
     func filePath(
