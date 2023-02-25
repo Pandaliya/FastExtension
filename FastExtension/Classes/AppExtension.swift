@@ -6,8 +6,9 @@
 //
 
 extension FastExtensionWrapper where Base: UIApplication {
-    public static var appVersion:String {
-        return ""
+    public var isRuningBackgroud: Bool {
+        let state = base.applicationState
+        return state == .background
     }
     
     public static var bundleIdentifier:String {

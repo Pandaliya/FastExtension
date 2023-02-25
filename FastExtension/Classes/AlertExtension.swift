@@ -12,7 +12,8 @@ public extension FastExtensionWrapper where Base: UIAlertController {
         title:String?,
         message:String?,
         cancelTitle:String = "Cancel",
-        confirmTitle: String = "Confirm", confirmCallback:(()->())? = nil)
+        confirmTitle: String = "Confirm",
+        callback:((Bool)->())? = nil)
     {
         let alert = UIAlertController(
             title: title,
@@ -20,11 +21,15 @@ public extension FastExtensionWrapper where Base: UIAlertController {
             preferredStyle: .alert
         )
         alert.addAction(UIAlertAction.init(title: confirmTitle, style: .default, handler: { _ in
-            if let cc = confirmCallback {
-                cc()
+            if let cc = callback {
+                cc(true)
             }
         }))
-        alert.addAction(UIAlertAction.init(title: cancelTitle, style: .cancel))
+        alert.addAction(UIAlertAction.init(title: cancelTitle, style: .destructive, handler: { _ in
+            if let cc = callback {
+                cc(false)
+            }
+        }))
         UIWindow.fe.currentWindow?.rootViewController?.present(alert, animated: true)
     }
     

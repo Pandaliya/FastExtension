@@ -36,6 +36,18 @@ public extension FastExtensionWrapper where Base: UIWindow {
         }
     }
     
+    static var textEffectsWindow: UIWindow? {
+        if #available(iOS 13, *) {
+            return UIApplication.shared.connectedScenes
+                .filter({$0.activationState == .foregroundActive})
+                .compactMap({$0 as? UIWindowScene})
+                .first?.windows.last
+        } else {
+            return UIApplication.shared.keyWindow
+        }
+    }
+    
+    
     static var topViewController: UIViewController? {
         guard let b = Base.fe.currentWindow else {
             return nil

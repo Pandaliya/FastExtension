@@ -13,8 +13,14 @@ public enum FastSandboxType: Int {
     case temp = 2
 }
 
+enum UserError:Swift.Error{
+    case noKey(message:String)         // key 无效
+    case ageBeyond     // 年级超出
+}
+
 public extension FastExtensionWrapper where Base: FileManager {
     
+    // MARK: - 路径
     /// 沙盒Document目录路径
     static var documentPath: String {
         return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last ?? ""
@@ -43,39 +49,30 @@ public extension FastExtensionWrapper where Base: FileManager {
     /// 判断目录是否存在如果不存在则创建
     /// - Parameter url: 目录路径
     /// - Returns: true: 目录存在或创建成功
-    func createDirectoryIfNotExit(url: URL) -> Bool {
+    func createDirectoryIfNotExit(url: URL) throws -> Bool {
         var isDir: ObjCBool = false
         if base.fileExists(atPath: url.path, isDirectory: &isDir), isDir.boolValue == true {
             return true
         }
         
-        do {
-            let res = try base.createDirectory(at: url, withIntermediateDirectories: true)
-            return true
-        } catch {
-            debugPrint(" error: \(error)")
-        }
-        return false
+        let _ = try base.createDirectory(at: url, withIntermediateDirectories: true)
+        return true
     }
     
-    /// 获取目录中的所有文件（不包括文件夹）
+    /// 获取目录中的所有文件（不包括文件
     /// - Parameters:
     ///   - atDirectory: 目录地址
     ///   - sort: 是否排序
     /// - Returns: 文件路径数组
-    func allFilePath(atDirectory: String, sort: Bool = true) -> [String] {
+    func allFilePath(atDirectory: String, sort: Bool = true) throws -> [String] {
         var filepaths: [String] = []
-        do {
-            let nameArray = try base.contentsOfDirectory(atPath: atDirectory)
-            for name in nameArray {
-                let fullPath = "\(atDirectory)/\(name)"
-                var isDir: ObjCBool = true
-                if base.fileExists(atPath: fullPath, isDirectory: &isDir), isDir.boolValue == false {
-                    filepaths.append(fullPath)
-                }
+        let nameArray = try base.contentsOfDirectory(atPath: atDirectory)
+        for name in nameArray {
+            let fullPath = "\(atDirectory)/\(name)"
+            var isDir: ObjCBool = true
+            if base.fileExists(atPath: fullPath, isDirectory: &isDir), isDir.boolValue == false {
+                filepaths.append(fullPath)
             }
-        } catch {
-            debugPrint(" error: \(error)")
         }
         
         return filepaths
@@ -86,54 +83,46 @@ public extension FastExtensionWrapper where Base: FileManager {
         isDir:Bool = true,
         createIfNotExit: Bool = true,
         fileContent:Data? = nil,
-        replace: Bool = false) -> String?
+        replace: Bool = false) throws -> String
     {
         if base.fileExists(atPath: path) {
             if replace {
-                do {
-                    try base.removeItem(atPath: path)
-                    
-                    if isDir {
-                        /// 参数 withIntermediateDirectories
-                        ///  false: 如果中间目录不存在，不创建 抛出异常
-                        ///  true: 如果中间目录不存在, 则创建中间目录
-                        try base.createDirectory(atPath: path, withIntermediateDirectories: true)
-                    } else {
-                        try base.createFile(atPath: path, contents: fileContent)
-                    }
-                    return path
-                } catch {
-                    debugPrint(" error: \(error)")
-                    return nil
+                try base.removeItem(atPath: path)
+                
+                if isDir {
+                    /// 参数 withIntermediateDirectories
+                    ///  false: 如果中间目录不存在，不创建 抛出异常
+                    ///  true: 如果中间目录不存在, 则创建中间目录
+                    try base.createDirectory(atPath: path, withIntermediateDirectories: true)
+                } else {
+                    base.createFile(atPath: path, contents: fileContent)
                 }
+                return path
             }
             
             return path
         }
         
         if createIfNotExit{
-            do {
-                if isDir {
-                    try base.createDirectory(atPath: path, withIntermediateDirectories: true)
-                } else {
-                    try base.createFile(atPath: path, contents: fileContent)
-                }
-                return path
-            } catch {
-                debugPrint(" error: \(error)")
-                return nil
+            if isDir {
+                try base.createDirectory(atPath: path, withIntermediateDirectories: true)
+            } else {
+                base.createFile(atPath: path, contents: fileContent)
             }
+            return path
         }
-        
-        return nil
+
+        return path
     }
+    
+    // MARK: - 保存
     
     func saveData(
         _ data: Data,
         relAdress:String? = nil,
         abAddress:String? = nil,
         type: FastSandboxType = .document,
-        replace:Bool = true) -> String?
+        replace:Bool = true) throws -> String?
     {
         var path = abAddress
         if path == nil, let rd = relAdress {
@@ -141,12 +130,32 @@ public extension FastExtensionWrapper where Base: FileManager {
         }
         guard let path = path else { return nil }
 
-        return base.fe.filePath(
+        return try base.fe.filePath(
             path: path,
             isDir: false,
             createIfNotExit: true,
             fileContent: data,
             replace: replace
         )
+    }
+    
+    // MARK: - 删除
+    
+    /// 清空目录
+    /// - Parameter path: 目录地址
+    /// - Returns: 是否删除成功
+    func clearDrectory(path: String) throws -> Bool{
+        var isDir: ObjCBool = false
+        if base.fileExists(atPath: path, isDirectory: &isDir), isDir.boolValue==true {
+            do {
+                try base.removeItem(atPath: path)
+                try base.createDirectory(atPath: path, withIntermediateDirectories: true)
+            } catch {
+                debugPrint(" error: \(error)")
+            }
+            return true
+        }
+        
+        return false
     }
 }
