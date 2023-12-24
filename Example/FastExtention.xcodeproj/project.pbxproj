@@ -20,7 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0AE208E3DDAAE02140E0D76B /* Pods-FastExtention_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastExtention_Tests.debug.xcconfig"; path = "Target Support Files/Pods-FastExtention_Tests/Pods-FastExtention_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		1A02F896B603B9069F1F60BA /* Pods_FastExtention_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FastExtention_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E878609C2458FD05B5B1C9C /* FastExtension.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = FastExtension.podspec; path = ../FastExtension.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		42204BAF94F6C005582F11C8 /* Pods-FastExtention_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastExtention_Example.release.xcconfig"; path = "Target Support Files/Pods-FastExtention_Example/Pods-FastExtention_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -36,7 +35,6 @@
 		6ACF4B2085387B8A4EBCA313 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		793867D71D233DB84443DA2D /* Pods_FastExtention_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FastExtention_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CDAACB084DE931B4502621B /* Pods-FastExtention_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastExtention_Example.debug.xcconfig"; path = "Target Support Files/Pods-FastExtention_Example/Pods-FastExtention_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		97D90C2E628B3A795B466DB8 /* Pods-FastExtention_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastExtention_Tests.release.xcconfig"; path = "Target Support Files/Pods-FastExtention_Tests/Pods-FastExtention_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B4B2CA112877E25A00AD6496 /* CaseSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseSet.swift; sourceTree = "<group>"; };
 		B4B2CA132877E26700AD6496 /* ViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExample.swift; sourceTree = "<group>"; };
 		B4BDF70829237EA70074E585 /* DateCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCase.swift; sourceTree = "<group>"; };
@@ -60,8 +58,6 @@
 			children = (
 				8CDAACB084DE931B4502621B /* Pods-FastExtention_Example.debug.xcconfig */,
 				42204BAF94F6C005582F11C8 /* Pods-FastExtention_Example.release.xcconfig */,
-				0AE208E3DDAAE02140E0D76B /* Pods-FastExtention_Tests.debug.xcconfig */,
-				97D90C2E628B3A795B466DB8 /* Pods-FastExtention_Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -70,7 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
-				607FACD21AFB9204008FA782 /* Example for FastExtention */,
+				607FACD21AFB9204008FA782 /* Example */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				32FB0259F29F061702857D12 /* Pods */,
@@ -86,7 +82,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		607FACD21AFB9204008FA782 /* Example for FastExtention */ = {
+		607FACD21AFB9204008FA782 /* Example */ = {
 			isa = PBXGroup;
 			children = (
 				B4CA2159292B192C00201FB4 /* DevTools */,
@@ -95,7 +91,7 @@
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
-			name = "Example for FastExtention";
+			name = Example;
 			path = FastExtention;
 			sourceTree = "<group>";
 		};
@@ -419,6 +415,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RHNL57UU8L;
 				INFOPLIST_FILE = FastExtention/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -435,6 +432,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RHNL57UU8L;
 				INFOPLIST_FILE = FastExtention/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";

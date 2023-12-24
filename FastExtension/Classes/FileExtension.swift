@@ -26,6 +26,7 @@ public extension FastExtensionWrapper where Base: FileManager {
         return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last ?? ""
     }
     
+    /// 沙盒缓存路径
     static var cachesPath: String {
         NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).last ?? ""
     }
@@ -59,7 +60,7 @@ public extension FastExtensionWrapper where Base: FileManager {
         return true
     }
     
-    /// 获取目录中的所有文件（不包括文件
+    /// 获取目录中的所有文件
     /// - Parameters:
     ///   - atDirectory: 目录地址
     ///   - sort: 是否排序
@@ -116,7 +117,6 @@ public extension FastExtensionWrapper where Base: FileManager {
     }
     
     // MARK: - 保存
-    
     func saveData(
         _ data: Data,
         relAdress:String? = nil,
