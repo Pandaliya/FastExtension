@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_FastExtention_ExampleVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_FastExtention_ExampleVersionString[];
+FOUNDATION_EXPORT double Pods_FSDemoVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_FSDemoVersionString[];
 

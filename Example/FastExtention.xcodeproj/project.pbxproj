@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		013114AE3FE736C815D899C2 /* Pods_FastExtention_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A02F896B603B9069F1F60BA /* Pods_FastExtention_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		8AA1D2B6781FFB4E30C8DDE0 /* Pods_FSDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9E063F6BB59A18CB4937F3 /* Pods_FSDemo.framework */; };
 		B4B2CA122877E25A00AD6496 /* CaseSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B2CA112877E25A00AD6496 /* CaseSet.swift */; };
 		B4B2CA142877E26700AD6496 /* ViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B2CA132877E26700AD6496 /* ViewExample.swift */; };
 		B4BDF70929237EA70074E585 /* DateCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BDF70829237EA70074E585 /* DateCase.swift */; };
@@ -20,11 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1A02F896B603B9069F1F60BA /* Pods_FastExtention_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FastExtention_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E878609C2458FD05B5B1C9C /* FastExtension.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = FastExtension.podspec; path = ../FastExtension.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		42204BAF94F6C005582F11C8 /* Pods-FastExtention_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastExtention_Example.release.xcconfig"; path = "Target Support Files/Pods-FastExtention_Example/Pods-FastExtention_Example.release.xcconfig"; sourceTree = "<group>"; };
 		59497D1A2203BE0A9A4AF251 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		607FACD01AFB9204008FA782 /* FastExtention_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastExtention_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACD01AFB9204008FA782 /* FSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,12 +31,13 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6ACF4B2085387B8A4EBCA313 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		793867D71D233DB84443DA2D /* Pods_FastExtention_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FastExtention_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CDAACB084DE931B4502621B /* Pods-FastExtention_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastExtention_Example.debug.xcconfig"; path = "Target Support Files/Pods-FastExtention_Example/Pods-FastExtention_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		9AB13B2D47B143B1BB766F31 /* Pods-FSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSDemo.debug.xcconfig"; path = "Target Support Files/Pods-FSDemo/Pods-FSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B4B2CA112877E25A00AD6496 /* CaseSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseSet.swift; sourceTree = "<group>"; };
 		B4B2CA132877E26700AD6496 /* ViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExample.swift; sourceTree = "<group>"; };
 		B4BDF70829237EA70074E585 /* DateCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCase.swift; sourceTree = "<group>"; };
 		B4CA215A292B194500201FB4 /* TextTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTools.swift; sourceTree = "<group>"; };
+		ED9E063F6BB59A18CB4937F3 /* Pods_FSDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FSDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF3C82D19BC8E762A5C07E84 /* Pods-FSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSDemo.release.xcconfig"; path = "Target Support Files/Pods-FSDemo/Pods-FSDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				013114AE3FE736C815D899C2 /* Pods_FastExtention_Example.framework in Frameworks */,
+				8AA1D2B6781FFB4E30C8DDE0 /* Pods_FSDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,8 +55,8 @@
 		32FB0259F29F061702857D12 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8CDAACB084DE931B4502621B /* Pods-FastExtention_Example.debug.xcconfig */,
-				42204BAF94F6C005582F11C8 /* Pods-FastExtention_Example.release.xcconfig */,
+				9AB13B2D47B143B1BB766F31 /* Pods-FSDemo.debug.xcconfig */,
+				FF3C82D19BC8E762A5C07E84 /* Pods-FSDemo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -77,7 +76,7 @@
 		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD01AFB9204008FA782 /* FastExtention_Example.app */,
+				607FACD01AFB9204008FA782 /* FSDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,8 +152,7 @@
 		DFC90EB55C48AA4215C85485 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1A02F896B603B9069F1F60BA /* Pods_FastExtention_Example.framework */,
-				793867D71D233DB84443DA2D /* Pods_FastExtention_Tests.framework */,
+				ED9E063F6BB59A18CB4937F3 /* Pods_FSDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,9 +160,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		607FACCF1AFB9204008FA782 /* FastExtention_Example */ = {
+		607FACCF1AFB9204008FA782 /* FSDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "FastExtention_Example" */;
+			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "FSDemo" */;
 			buildPhases = (
 				9A0B489249E90540026B27BF /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
@@ -176,9 +174,9 @@
 			);
 			dependencies = (
 			);
-			name = FastExtention_Example;
+			name = FSDemo;
 			productName = FastExtention;
-			productReference = 607FACD01AFB9204008FA782 /* FastExtention_Example.app */;
+			productReference = 607FACD01AFB9204008FA782 /* FSDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -212,7 +210,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				607FACCF1AFB9204008FA782 /* FastExtention_Example */,
+				607FACCF1AFB9204008FA782 /* FSDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -237,7 +235,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FastExtention_Example/Pods-FastExtention_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FSDemo/Pods-FSDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FastExtension/FastExtension.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -246,7 +244,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FastExtention_Example/Pods-FastExtention_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FSDemo/Pods-FSDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9A0B489249E90540026B27BF /* [CP] Check Pods Manifest.lock */ = {
@@ -264,7 +262,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FastExtention_Example-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FSDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -354,7 +352,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -400,7 +398,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -410,7 +408,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CDAACB084DE931B4502621B /* Pods-FastExtention_Example.debug.xcconfig */;
+			baseConfigurationReference = 9AB13B2D47B143B1BB766F31 /* Pods-FSDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RHNL57UU8L;
@@ -427,7 +425,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42204BAF94F6C005582F11C8 /* Pods-FastExtention_Example.release.xcconfig */;
+			baseConfigurationReference = FF3C82D19BC8E762A5C07E84 /* Pods-FSDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RHNL57UU8L;
@@ -454,7 +452,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "FastExtention_Example" */ = {
+		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "FSDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACF01AFB9204008FA782 /* Debug */,
