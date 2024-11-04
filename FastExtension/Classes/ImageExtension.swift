@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+extension UIImage:FastExtensionCompatible {}
 public extension FastExtensionWrapper where Base: UIImage {
     
     /// 中间两个像素拉伸的image
@@ -69,8 +69,14 @@ public extension FastExtensionWrapper where Base: UIImage {
             return base.withTintColor(c, renderingMode: .alwaysTemplate)
         } else {
             let img = base.withRenderingMode(.alwaysTemplate)
-            
             return img
+        }
+    }
+    
+    static func snapshotOf(layer: CALayer) -> UIImage {
+        let re = UIGraphicsImageRenderer(size: layer.frame.size)
+        return re.image { context in
+            layer.draw(in: context.cgContext)
         }
     }
     

@@ -7,6 +7,7 @@
 
 import Foundation
 
+extension Bundle:FastExtensionCompatible {}
 public extension FastExtensionWrapper where Base: Bundle {
     
     static func bundle(framework: String) -> Bundle? {

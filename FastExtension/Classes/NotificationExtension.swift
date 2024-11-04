@@ -21,6 +21,7 @@ final public class FastNotificationToken {
     }
 }
 
+extension NotificationCenter:FastExtensionCompatible {}
 public extension FastExtensionWrapper where Base: NotificationCenter {
     func addObserve(name: NSNotification.Name?,
                     object obj: Any? = nil,

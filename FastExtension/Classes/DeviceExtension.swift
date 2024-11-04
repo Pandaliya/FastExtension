@@ -7,6 +7,7 @@
 
 import Foundation
 
+extension UIDevice:FastExtensionCompatible {}
 public extension FastExtensionWrapper where Base: UIDevice {
     static func systemInfo(name: String) -> String{
         var size:Int = 0

@@ -18,17 +18,25 @@ enum UserError:Swift.Error{
     case ageBeyond     // 年级超出
 }
 
+
+extension FileManager:FastExtensionCompatible {}
 public extension FastExtensionWrapper where Base: FileManager {
     
     // MARK: - 路径
     /// 沙盒Document目录路径
     static var documentPath: String {
-        return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last ?? ""
+        if let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            return fileURL.path
+        }
+        return ""
     }
     
     /// 沙盒缓存路径
     static var cachesPath: String {
-        NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).last ?? ""
+        if let fileURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first {
+            return fileURL.path
+        }
+        return  ""
     }
     
     static var tempPath: String {
@@ -45,6 +53,19 @@ public extension FastExtensionWrapper where Base: FileManager {
         case .temp:
             return Base.fe.tempPath + "\(relPath)"
         }
+    }
+    
+    
+    /// 在一个路径中提取文件名
+    /// - Parameter path: 文件路径
+    /// - Returns: 文件名
+    static func nameOf(path:String) -> String{
+        return path.components(separatedBy: "/").last ?? path
+    }
+    
+    static func directoryOf(filePath: String) -> String? {
+        let fileURL = URL(fileURLWithPath: filePath)
+        return fileURL.deletingLastPathComponent().path
     }
     
     /// 判断目录是否存在如果不存在则创建
@@ -158,4 +179,75 @@ public extension FastExtensionWrapper where Base: FileManager {
         
         return false
     }
+    
+    
+    // 获取文件大小（以 MB 为单位）
+    func fileSizeInMB(atPath path: String) -> Double {
+        let fileManager = FileManager.default
+        do {
+            let attributes = try fileManager.attributesOfItem(atPath: path)
+            if let fileSize = attributes[.size] as? UInt64 {
+                return Double(fileSize) / (1024 * 1024)  // 将字节转换为 MB
+            }
+        } catch {
+            print("无法获取文件大小：\(error)")
+        }
+        return 0
+    }
+    
+    // 递归打印目录结构，并计算目录大小
+    func printDirectoryTreeAndCalculateSize(at path: String, prefix: String = "") -> Double {
+        let fileManager = FileManager.default
+        var totalSize: Double = 0  // 记录当前目录的总大小
+
+        do {
+            // 获取指定路径的文件和子目录
+            let items = try fileManager.contentsOfDirectory(atPath: path)
+            
+            for (index, item) in items.enumerated() {
+                let isLast = index == items.count - 1
+                let itemPath = (path as NSString).appendingPathComponent(item)
+                
+                // 检查是否为目录或文件
+                var isDirectory: ObjCBool = false
+                if fileManager.fileExists(atPath: itemPath, isDirectory: &isDirectory) {
+                    if isDirectory.boolValue {
+                        // 如果是目录，递归打印并计算其大小
+                        print("\(prefix)\(isLast ? "└── " : "├── ")\(item)/")
+                        totalSize += printDirectoryTreeAndCalculateSize(at: itemPath, prefix: prefix + (isLast ? "    " : "│   "))
+                    } else {
+                        // 如果是文件，获取其大小并累加到总大小
+                        let fileSize = fileSizeInMB(atPath: itemPath)
+                        totalSize += fileSize
+                        print("\(prefix)\(isLast ? "└── " : "├── ")\(item) - \(String(format: "%.2f", fileSize)) MB")
+                    }
+                }
+            }
+        } catch {
+            print("无法访问目录：\(error)")
+        }
+        
+        return totalSize
+    }
+    
+    
+    /// 移动文件，并确保中间目录存在
+    /// - Parameters:
+    ///   - sourcePath: 源文件地址
+    ///   - destinationPath: 目标地址
+    func moveFile(from sourcePath: String, to destinationPath: String) throws {
+        let fileManager = FileManager.default
+        let destinationURL = URL(fileURLWithPath: destinationPath)
+        let destinationDirectory = destinationURL.deletingLastPathComponent()
+        
+        if !fileManager.fileExists(atPath: destinationDirectory.path) {
+            try fileManager.createDirectory(at: destinationDirectory, withIntermediateDirectories: true, attributes: nil)
+            debugPrint("已创建目录：\(destinationDirectory.path)")
+        }
+
+        // 移动文件
+        try fileManager.moveItem(atPath: sourcePath, toPath: destinationPath)
+        debugPrint("文件已移动到：\(destinationPath)")
+    }
+
 }

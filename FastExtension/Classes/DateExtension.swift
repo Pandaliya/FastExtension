@@ -7,6 +7,7 @@
 
 import Foundation
 
+extension NSDate:FastExtensionCompatible {}
 public extension FastExtensionWrapper where Base: NSDate {
     
     /// 返回是当天的第几分钟

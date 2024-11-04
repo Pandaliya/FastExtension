@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 /// 测试用例协议
+public typealias ExampleCaseFunction = () -> Void
 public protocol ExampleCase {
     var title: String { get set}
     var callBack: (()->())? {get set}
@@ -24,8 +25,9 @@ public protocol ExampleCase {
     
     // Func Case
     var funcIndex: Int { get }
-    var funcCallback: ((FEFuncCaseTableController, Int)->(Bool))? { get }
-    var funcCaseTitles: [String] { get }
+    var funcCallback: ((FEFuncCaseTableController, String, Int)->(Bool))? { get } // 点击测试
+    var funcCaseTitles: [String] { get } // 测试项目标题
+    var funcTitleFuncMap:[String: ExampleCaseFunction] { get }
     var funcController: FEFuncCaseTableController { get }
 }
 
@@ -45,6 +47,7 @@ public extension ExampleCase {
     
     func routerToContoller(from: UIViewController? = nil, push: Bool = true) {
         if let c = self.controller {
+            c.hidesBottomBarWhenPushed = true
             let _ = UIWindow.fe.showController(c, from: from, push: push)
         }
     }
@@ -54,8 +57,16 @@ public extension ExampleCase {
     }
     
     var funcIndex: Int { return 0 }
-    var funcCaseTitles: [String] { return [] }
-    var funcCallback: ((FEFuncCaseTableController, Int)->(Bool))? { return nil }
+    
+    var funcCaseTitles: [String] {
+        return Array(self.funcTitleFuncMap.keys)
+    }
+    
+    var funcTitleFuncMap:[String: ExampleCaseFunction] {
+        return [:]
+    }
+    
+    var funcCallback: ((FEFuncCaseTableController, String ,Int)->(Bool))? { return nil }
     var funcController: FEFuncCaseTableController {
         return FEFuncCaseTableController.init(
             titles: self.funcCaseTitles,
@@ -283,9 +294,9 @@ class FECaseSetHeader: UITableViewHeaderFooterView {
 
 open class FEFuncCaseTableController: UITableViewController {
     var rowTitles:[String] = []
-    var rowCallback: ((FEFuncCaseTableController, Int)->(Bool))? = nil
+    var rowCallback: ((FEFuncCaseTableController, String, Int)->(Bool))? = nil
     
-    public convenience init(titles:[String], callBack: ((FEFuncCaseTableController, Int)->(Bool))? = nil, title:String="调试项目") {
+    public convenience init(titles:[String], callBack: ((FEFuncCaseTableController, String, Int)->(Bool))? = nil, title:String="调试项目") {
         self.init(style: .plain)
         self.rowTitles = titles
         self.rowCallback = callBack
@@ -329,11 +340,10 @@ open class FEFuncCaseTableController: UITableViewController {
     
     open override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if let c = self.rowCallback {
-            let _ = c(self, indexPath.row)
+        if let c = self.rowCallback, indexPath.row < self.rowTitles.count {
+            let _ = c(self, self.rowTitles[indexPath.row], indexPath.row)
         }
     }
-    
     
     // MARK: - Lazy
 }

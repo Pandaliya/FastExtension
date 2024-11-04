@@ -18,6 +18,13 @@ public extension FEControllerProtocol {
 extension UIViewController: FEControllerProtocol {}
 
 
+extension UIViewController:FastExtensionCompatible {}
+
 public extension FastExtensionWrapper where Base: UIViewController {
-    
+    var isVisible: Bool { // 是否可见
+        if base.isViewLoaded && base.view.window != nil {
+            return true
+        }
+        return false
+    }
 }

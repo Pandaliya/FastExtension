@@ -7,6 +7,12 @@
 
 import Foundation
 
+
+// 定义 += 运算符的重载版本
+public func +=<K, V>(left: inout [K: V], right: [K: V]) {
+    left.merge(right) { (_, new) in new }
+}
+
 public extension Dictionary {
     func prettyDebugPrint() {
         #if DEBUG

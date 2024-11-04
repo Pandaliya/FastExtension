@@ -15,7 +15,7 @@ public struct FastExtensionWrapper<Base> {
     }
 }
 
-public protocol FastExtensionCompatible { }
+public protocol FastExtensionCompatible: AnyObject { }
 
 extension FastExtensionCompatible {
     public var fe: FastExtensionWrapper<Self> {
@@ -29,8 +29,21 @@ extension FastExtensionCompatible {
     }
 }
 
-extension NSObject: FastExtensionCompatible { }
 
+public protocol FastExtensionCompatibleValue {
+}
+
+extension FastExtensionCompatibleValue {
+    public var fe: FastExtensionWrapper<Self> {
+        get { return FastExtensionWrapper(self) }
+        set { }
+    }
+    
+    public static var fe: FastExtensionWrapper<Self>.Type {
+        get { return FastExtensionWrapper<Self>.self }
+        set { }
+    }
+}
 
 // MARK: - FAST Cloures
 public typealias FastResult = (_ result: Bool, _ errMsg: String?) -> Void
