@@ -63,7 +63,10 @@ public extension FastExtensionWrapper where Base: FileManager {
         return path.components(separatedBy: "/").last ?? path
     }
     
-    static func directoryOf(filePath: String) -> String? {
+    /// 在文件路径中提取目录路径
+    /// - Parameter filePath: 文件路径
+    /// - Returns: 目录路径
+    static func directoryOf(filePath: String) -> String {
         let fileURL = URL(fileURLWithPath: filePath)
         return fileURL.deletingLastPathComponent().path
     }

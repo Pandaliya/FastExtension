@@ -73,11 +73,24 @@ public extension FastExtensionWrapper where Base: UIImage {
         }
     }
     
+    // 创建一个Layer的截图
     static func snapshotOf(layer: CALayer) -> UIImage {
         let re = UIGraphicsImageRenderer(size: layer.frame.size)
         return re.image { context in
             layer.draw(in: context.cgContext)
         }
+    }
+    
+    static func createPureColorImage(color: UIColor, size: CGSize) -> UIImage? {
+        // 使用 UIGraphicsImageRenderer 创建图片
+        let renderer = UIGraphicsImageRenderer(size: size)
+        let image = renderer.image { context in
+            // 设置填充颜色
+            color.setFill()
+            // 绘制矩形
+            context.fill(CGRect(origin: .zero, size: size))
+        }
+        return image
     }
     
 }

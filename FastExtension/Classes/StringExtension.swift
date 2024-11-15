@@ -27,6 +27,20 @@ extension FastExtensionWrapper where Base == String {
     }
     
     
+    /// 时间长度表达
+    /// - Parameter seconds: 秒数
+    /// - Returns: 时间长度 hh:mm 或者 mm:ss
+    public static func durationDescOf(seconds: Int) -> String {
+        let hour = seconds/3600
+        let minite = String.init(format: "%02d", (seconds%3600)/60)
+        let second = String.init(format: "%02d", seconds%60)
+        if hour > 0 {
+            return "\(hour):\(minite):\(second)"
+        }
+        return "\(minite):\(second)"
+    }
+    
+    
     /// 字符串md5编码
     public var md5: String {
         guard let data = base.data(using: .utf8) else {
