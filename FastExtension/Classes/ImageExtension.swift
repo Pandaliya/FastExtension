@@ -62,6 +62,7 @@ public extension FastExtensionWrapper where Base: UIImage {
         }
     }
     
+    // 修改图标的颜色
     func tintedImage(_ color: UIColor?) -> UIImage {
         guard let c = color else { return base }
         
@@ -73,6 +74,41 @@ public extension FastExtensionWrapper where Base: UIImage {
         }
     }
     
+    
+    /// 旋转图片生成新的图片
+    /// - Parameter degrees: 旋转度数
+    /// - Returns: 旋转后图片
+    func rotated(byDegrees degrees: CGFloat) -> UIImage? {
+        let radians = degrees * CGFloat.pi / 180
+        
+        // 计算旋转后的画布大小
+        var newSize = CGRect(origin: .zero, size: base.size)
+            .applying(CGAffineTransform(rotationAngle: radians)).size
+        newSize.width = floor(newSize.width)
+        newSize.height = floor(newSize.height)
+        
+        // 开始图形上下文
+        UIGraphicsBeginImageContextWithOptions(newSize, false, base.scale)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        
+        // 将图像中心平移到画布中心
+        context.translateBy(x: newSize.width / 2, y: newSize.height / 2)
+        // 旋转上下文
+        context.rotate(by: radians)
+        // 绘制图像（调整起点位置）
+        base.draw(in: CGRect(
+            x: -base.size.width / 2,
+            y: -base.size.height / 2,
+            width: base.size.width,
+            height: base.size.height
+        ))
+        // 获取新的图像
+        let rotatedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return rotatedImage
+    }
+    
+    // MARK: - static
     // 创建一个Layer的截图
     static func snapshotOf(layer: CALayer) -> UIImage {
         let re = UIGraphicsImageRenderer(size: layer.frame.size)
@@ -81,6 +117,11 @@ public extension FastExtensionWrapper where Base: UIImage {
         }
     }
     
+    /// 创建一个纯色图片
+    /// - Parameters:
+    ///   - color: 颜色
+    ///   - size: 图片大小
+    /// - Returns: 图片
     static func createPureColorImage(color: UIColor, size: CGSize) -> UIImage? {
         // 使用 UIGraphicsImageRenderer 创建图片
         let renderer = UIGraphicsImageRenderer(size: size)

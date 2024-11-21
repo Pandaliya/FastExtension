@@ -179,7 +179,6 @@ public extension FastExtensionWrapper where Base: FileManager {
             }
             return true
         }
-        
         return false
     }
     
