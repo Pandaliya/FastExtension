@@ -15,14 +15,15 @@ extension FastExtensionWrapper where Base == String {
     /// - Parameter size: 容量 byte
     /// - Returns: 容量
     public static func descriptionOf(size: Int) -> String {
+        let douSize = Double(size)
         if size < 1024 {
             return "\(size)bytes"
         } else if size < 1024 * 1024 {
-            return "\(size/1024)KB"
+            return String(format: "%.2fKB", douSize/1024)
         } else if size < 1024 * 1024 * 1024 {
-            return "\(size/(1024*1024))MB"
+            return String(format: "%.2fMB", douSize/(1024*1024))
         } else {
-            return "\(size/(1024*1024*1024))GB"
+            return String(format: "%.2fGB", douSize/(1024*1024*1024))
         }
     }
     
