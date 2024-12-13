@@ -56,7 +56,7 @@ public extension FastExtensionWrapper where Base: FileManager {
     }
     
     
-    /// 在一个路径中提取文件名
+    /// 在一个路径中提取文件名或目录名
     /// - Parameter path: 文件路径
     /// - Returns: 文件名
     static func nameOf(path:String) -> String{

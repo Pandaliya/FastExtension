@@ -16,13 +16,31 @@ extension FastExtensionWrapper where Base: UIApplication {
         return Bundle.main.bundleIdentifier ?? "null"
     }
     
+    /// 跳转到手机设置页面
     public static func toAppSetting() -> Bool{
         if let url = URL(string: UIApplication.openSettingsURLString) {
             UIApplication.shared.open(url)
             return true
         }
-        
         return false
+    }
+    
+    /// 跳转到App Store的评论页面
+    /// - Parameter appID: appid
+    public static func toAppReviewPageOf(appID: String) {
+        if let url = URL(string: "itms-apps://itunes.apple.com/app/id\(appID)?action=write-review") {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:]) { success in
+                    if success {
+                        print("Successfully opened App Store review page.")
+                    } else {
+                        print("Failed to open App Store review page.")
+                    }
+                }
+            } else {
+                print("Cannot open App Store review page.")
+            }
+        }
     }
     
     /// 当前ip地址（静态ip，不是公网IP）
