@@ -64,6 +64,9 @@ public extension FastExtensionWrapper where Base: UIView {
         base.layer.mask = fieldLayer
     }
     
+    func removeCornered() {
+        base.layer.mask = nil
+    }
     
     func fixedSnapshotImage() -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(base.frame.size, false, UIScreen.main.scale);

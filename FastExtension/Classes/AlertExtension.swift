@@ -43,4 +43,44 @@ public extension FastExtensionWrapper where Base: UIAlertController {
         UIWindow.fe.currentWindow?.rootViewController?.present(alert, animated: true)
     }
     
+    static func showTextFieldAlert(
+        title:String?,
+        message:String? = nil,
+        placeholder: String = "请输入",
+        cancelTitle:String = "Cancel",
+        confirmTitle: String = "Confirm",
+        from: UIViewController? = nil,
+        callback:((String?)->())? = nil)
+    {
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        
+        // 添加一个文本输入框
+        alert.addTextField { textField in
+            textField.placeholder = placeholder
+            textField.clearButtonMode = .whileEditing
+        }
+        
+        alert.addAction(UIAlertAction.init(title: confirmTitle, style: .default, handler: { _ in
+            if let cc = callback {
+                cc(alert.textFields?.first?.text)
+            }
+        }))
+        
+        alert.addAction(UIAlertAction.init(title: cancelTitle, style: .destructive, handler: { _ in
+            if let cc = callback {
+                cc(nil)
+            }
+        }))
+        
+        if let f = from {
+            f.present(alert, animated: true)
+        } else {
+            UIWindow.fe.currentWindow?.rootViewController?.present(alert, animated: true)
+        }
+    }
+    
 }
