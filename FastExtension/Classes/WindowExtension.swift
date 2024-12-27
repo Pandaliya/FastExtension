@@ -20,6 +20,10 @@ public extension FastExtensionWrapper where Base: UIWindow {
         return 20
     }
     
+    static var safeBottomHeight:CGFloat {
+        return UIWindow.fe.currentWindow?.safeAreaInsets.bottom ?? 0
+    }
+    
     static var navigationHeight:CGFloat {
         return self.statusHeight + 44
     }
