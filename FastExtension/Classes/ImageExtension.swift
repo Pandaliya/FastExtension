@@ -7,7 +7,6 @@
 
 import Foundation
 
-extension UIImage:FastExtensionCompatible {}
 public extension FastExtensionWrapper where Base: UIImage {
     
     /// 中间两个像素拉伸的image
@@ -134,6 +133,33 @@ public extension FastExtensionWrapper where Base: UIImage {
         return image
     }
     
+    // MARK: - 重绘图片
+    func remakeImage(size: CGSize) -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: size)
+        let resizedImage = renderer.image { _ in
+            base.draw(in: CGRect(origin: .zero, size: size))
+        }
+        return resizedImage
+    }
+    
+    func remakeImage(scale: Double) -> UIImage {
+        let size = CGSize(width: base.size.width * scale, height: base.size.height * scale)
+        return remakeImage(size: size)
+    }
+    
+    func remakeImage(maxLength: Double) -> UIImage {
+        let maxL = max(base.size.width, base.size.height)
+        if maxLength > maxL {
+            return base
+        }
+        return remakeImage(scale: maxLength/maxL)
+    }
+    
+    static func loadImage(from filePath: String) -> UIImage? {
+        let fileURL = URL(fileURLWithPath: filePath)
+        // 直接从文件加载图片，性能较高，不会将整个文件加载到内存中。
+        return UIImage(contentsOfFile: fileURL.path)
+    }
 }
 
 
