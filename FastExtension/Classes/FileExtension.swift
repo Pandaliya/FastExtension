@@ -19,7 +19,6 @@ enum UserError:Swift.Error{
 }
 
 
-extension FileManager:FastExtensionCompatible {}
 public extension FastExtensionWrapper where Base: FileManager {
     
     // MARK: - 路径
