@@ -7,7 +7,6 @@
 
 import Foundation
 
-extension NSAttributedString:FastExtensionCompatible {}
 public extension FastExtensionWrapper where Base: NSAttributedString {
     
     /// 属性字符串size

@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension UIView:FastExtensionCompatible {}
+// extension UIView:FastExtensionCompatible {}
 public extension UIView {
     func debugPrintHierarchy(level:String = "") {
         

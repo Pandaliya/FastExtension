@@ -5,7 +5,7 @@
 //  Created by pan zhang on 2022/6/29.
 //
 
-extension UIApplication:FastExtensionCompatible {}
+
 extension FastExtensionWrapper where Base: UIApplication {
     public var isRuningBackgroud: Bool {
         let state = base.applicationState

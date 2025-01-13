@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension UIColor:FastExtensionCompatible {}
+
 extension FastExtensionWrapper where Base: UIColor {
     
     /// 生成随机颜色

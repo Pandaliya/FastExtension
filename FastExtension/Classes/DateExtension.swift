@@ -7,7 +7,6 @@
 
 import Foundation
 
-extension NSDate:FastExtensionCompatible {}
 public extension FastExtensionWrapper where Base: NSDate {
     
     /// 返回是当天的第几分钟
@@ -20,6 +19,15 @@ public extension FastExtensionWrapper where Base: NSDate {
         }
         debugPrint("\(hh) : \(mm)")
         return hh * 60 + mm
+    }
+}
+
+extension Date {
+    public func stringWithFormat(_ format: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format  // 设置日期格式
+        formatter.locale = Locale.current
+        return formatter.string(from: self)
     }
 }
 

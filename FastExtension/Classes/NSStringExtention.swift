@@ -7,7 +7,6 @@
 
 import Foundation
 
-extension NSString:FastExtensionCompatible {}
 public extension FastExtensionWrapper where Base: NSString {
     
     /// 计算字符串Size
