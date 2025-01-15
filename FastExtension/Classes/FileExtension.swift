@@ -73,6 +73,7 @@ public extension FastExtensionWrapper where Base: FileManager {
     /// 判断目录是否存在如果不存在则创建
     /// - Parameter url: 目录路径
     /// - Returns: true: 目录存在或创建成功
+    @discardableResult
     func createDirectoryIfNotExit(url: URL) throws -> Bool {
         var isDir: ObjCBool = false
         if base.fileExists(atPath: url.path, isDirectory: &isDir), isDir.boolValue == true {
@@ -98,10 +99,35 @@ public extension FastExtensionWrapper where Base: FileManager {
                 filepaths.append(fullPath)
             }
         }
-        
         return filepaths
     }
     
+    
+    /// 所有一级子目录
+    /// - Parameter path: 路径
+    /// - Returns: 一级子目录
+    func subDirectoryNameOf(path:String) throws -> [String] {
+        var dirName: [String] = []
+        let nameArray = try base.contentsOfDirectory(atPath: path)
+        for name in nameArray {
+            let fullPath = "\(path)/\(name)"
+            var isDir: ObjCBool = true
+            if base.fileExists(atPath: fullPath, isDirectory: &isDir), isDir.boolValue {
+                dirName.append(name)
+            }
+        }
+        return dirName
+    }
+    
+    
+    /// 创建一个目录或写入data到一个文件
+    /// - Parameters:
+    ///   - path: 绝对路径
+    ///   - isDir: true: 创建目录; false: 写入文件
+    ///   - createIfNotExit: 不存在则创建（包括中间目录）
+    ///   - fileContent: 文件内容
+    ///   - replace: 是否替换已存在文件
+    /// - Returns: 绝对路径
     func filePath(
         path: String,
         isDir:Bool = true,

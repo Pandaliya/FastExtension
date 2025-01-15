@@ -73,6 +73,7 @@ public extension FastExtensionWrapper where Base: UIWindow {
         return current
     }
     
+    @discardableResult
     static func showController(
         _ controller: UIViewController,
         from: UIViewController? = nil,
