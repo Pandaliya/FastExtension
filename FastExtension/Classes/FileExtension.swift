@@ -102,6 +102,37 @@ public extension FastExtensionWrapper where Base: FileManager {
         return filepaths
     }
     
+    func fileAndDirectory(at path: String) throws ->([String], [String]) {
+        var f: [String] = []
+        var d: [String] = []
+        let nameArray = try base.contentsOfDirectory(atPath: path)
+        var isDir: ObjCBool = true
+        for name in nameArray {
+            let fullPath = "\(path)/\(name)"
+            if base.fileExists(atPath: fullPath, isDirectory: &isDir) {
+                if isDir.boolValue {
+                    d.append(name)
+                } else {
+                    f.append(name)
+                }
+            }
+        }
+        return (f, d)
+    }
+    
+    func getFileCreationDate(atPath path: String) -> Date? {
+        do {
+            let attributes = try base.attributesOfItem(atPath: path)
+            if let creationDate = attributes[.creationDate] as? Date {
+                return creationDate
+            }
+        } catch {
+            print("Error getting file attributes: \(error)")
+        }
+
+        return nil
+    }
+    
     
     /// 所有一级子目录
     /// - Parameter path: 路径

@@ -160,6 +160,24 @@ public extension FastExtensionWrapper where Base: UIImage {
         // 直接从文件加载图片，性能较高，不会将整个文件加载到内存中。
         return UIImage(contentsOfFile: fileURL.path)
     }
+    
+    // 规范化的picture
+    func normalizedImage() -> UIImage? {
+        if base.imageOrientation == .up {
+            return base
+        }
+        return repaintImage()
+    }
+    func repaintImage() -> UIImage? {
+        let format = UIGraphicsImageRendererFormat()
+        format.opaque = false
+        format.scale = base.scale
+        let renderer = UIGraphicsImageRenderer(size: base.size, format: format)
+        let image = renderer.image { context in
+            base.draw(in: CGRect(x: 0, y: 0, width: base.size.width, height: base.size.height))
+        }
+        return image
+    }
 }
 
 

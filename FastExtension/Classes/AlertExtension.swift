@@ -13,6 +13,7 @@ public extension FastExtensionWrapper where Base: UIAlertController {
         message:String?,
         cancelTitle:String = "Cancel",
         confirmTitle: String = "Confirm",
+        from: UIViewController? = nil,
         callback:((Bool)->())? = nil)
     {
         let alert = UIAlertController(
@@ -30,7 +31,11 @@ public extension FastExtensionWrapper where Base: UIAlertController {
                 cc(false)
             }
         }))
-        UIWindow.fe.currentWindow?.rootViewController?.present(alert, animated: true)
+        if let from = from {
+            from.present(alert, animated: true)
+        } else {
+            UIWindow.fe.currentWindow?.rootViewController?.present(alert, animated: true)
+        }
     }
     
     static func showMessageAlert(title: String?, message:String?, confirmTitle:String = "Confirm") {
