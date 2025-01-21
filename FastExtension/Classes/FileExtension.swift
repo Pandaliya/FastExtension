@@ -192,8 +192,17 @@ public extension FastExtensionWrapper where Base: FileManager {
             }
             return path
         }
-
         return path
+    }
+    
+    func makeIntermediateDirectoriesOf(fileURL: URL) throws {
+        // 获取文件所在目录路径
+        let directoryURL = fileURL.deletingLastPathComponent()
+
+        // 检查目录是否存在，不存在则创建
+        if !FileManager.default.fileExists(atPath: directoryURL.path) {
+            try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
+        }
     }
     
     // MARK: - 保存
