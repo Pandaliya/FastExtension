@@ -41,6 +41,18 @@ extension FastExtensionWrapper where Base == String {
         return "\(minite):\(second)"
     }
     
+    public var jsonObject: Any? {
+        if let jsonData = base.data(using: .utf8) {
+            do {
+                let jsonDict = try JSONSerialization.jsonObject(with: jsonData, options: [])
+                return jsonDict
+            } catch {
+                print("JSON 解析失败: \(error)")
+            }
+        }
+        return nil
+    }
+    
     
     /// 字符串md5编码
     public var md5: String {
