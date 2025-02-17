@@ -316,5 +316,13 @@ public extension FastExtensionWrapper where Base: FileManager {
         try fileManager.moveItem(atPath: sourcePath, toPath: destinationPath)
         debugPrint("文件已移动到：\(destinationPath)")
     }
-
+    
+    func fileIsExit(at path: String) -> Bool {
+        var isDir: ObjCBool = false
+        if base.fileExists(atPath: path, isDirectory: &isDir), isDir.boolValue == false {
+            return true
+        }
+        return false
+    }
+    
 }
