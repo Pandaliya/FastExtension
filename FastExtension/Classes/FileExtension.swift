@@ -302,7 +302,7 @@ public extension FastExtensionWrapper where Base: FileManager {
     /// - Parameters:
     ///   - sourcePath: 源文件地址
     ///   - destinationPath: 目标地址
-    func moveFile(from sourcePath: String, to destinationPath: String) throws {
+    func moveFile(from sourcePath: String, to destinationPath: String, overwrite: Bool = false) throws {
         let fileManager = FileManager.default
         let destinationURL = URL(fileURLWithPath: destinationPath)
         let destinationDirectory = destinationURL.deletingLastPathComponent()
@@ -311,9 +311,17 @@ public extension FastExtensionWrapper where Base: FileManager {
             try fileManager.createDirectory(at: destinationDirectory, withIntermediateDirectories: true, attributes: nil)
             debugPrint("已创建目录：\(destinationDirectory.path)")
         }
-
-        // 移动文件
-        try fileManager.moveItem(atPath: sourcePath, toPath: destinationPath)
+        
+        if overwrite, fileIsExit(at: destinationPath) {
+            // 替换文件
+            let _ = try fileManager.replaceItemAt(
+                URL(fileURLWithPath: destinationPath),
+                withItemAt: URL(fileURLWithPath: sourcePath)
+            )
+        } else {
+            // 移动文件
+            try fileManager.moveItem(atPath: sourcePath, toPath: destinationPath)
+        }
         debugPrint("文件已移动到：\(destinationPath)")
     }
     
