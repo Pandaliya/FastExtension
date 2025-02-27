@@ -51,7 +51,7 @@ public extension FastExtensionWrapper where Base: UIAlertController {
     static func showTextFieldAlert(
         title:String?,
         message:String? = nil,
-        placeholder: String = "请输入",
+        placeholder: String = "Please enter",
         cancelTitle:String = "Cancel",
         confirmTitle: String = "Confirm",
         from: UIViewController? = nil,
