@@ -14,7 +14,7 @@ extension FastExtensionWrapper where Base == String {
     /// 存储容量的人性化表达
     /// - Parameter size: 容量 byte
     /// - Returns: 容量
-    public static func descriptionOf(size: Int) -> String {
+    public static func descriptionOf(size: UInt) -> String {
         let douSize = Double(size)
         if size < 1024 {
             return "\(size)bytes"
