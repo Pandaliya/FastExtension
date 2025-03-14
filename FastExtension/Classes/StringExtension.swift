@@ -41,6 +41,8 @@ extension FastExtensionWrapper where Base == String {
         return "\(minite):\(second)"
     }
     
+    
+    /// JSON字符串解析成对象
     public var jsonObject: Any? {
         if let jsonData = base.data(using: .utf8) {
             do {
@@ -53,6 +55,13 @@ extension FastExtensionWrapper where Base == String {
         return nil
     }
     
+    // 预排版宽度
+    public func widthOf(font: UIFont, maxHeight: CGFloat = 40) -> CGFloat {
+        guard !base.isEmpty else { return 0 }
+        return NSAttributedString(string: base, attributes: [
+            .font : font
+        ]).fe.contentSize(maxH: maxHeight).width
+    }
     
     /// 字符串md5编码
     public var md5: String {
