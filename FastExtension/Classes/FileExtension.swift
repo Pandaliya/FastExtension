@@ -64,10 +64,26 @@ public extension FastExtensionWrapper where Base: FileManager {
     
     /// 在文件路径中提取目录路径
     /// - Parameter filePath: 文件路径
+    /// - Parameter level: 目录级数，1获取上1级目录，-1获取所有上级目录
     /// - Returns: 目录路径
-    static func directoryOf(filePath: String) -> String {
-        let fileURL = URL(fileURLWithPath: filePath)
-        return fileURL.deletingLastPathComponent().path
+    static func directoryOf(filePath: String, level: Int = -1) -> String {
+        let parentDirectory = (filePath as NSString).deletingLastPathComponent
+        if parentDirectory.isEmpty {
+            return "/"
+        }
+        
+        // 获取上级目录
+        if level < 0 {
+            return parentDirectory
+        }
+        
+        let componet = parentDirectory.components(separatedBy: "/")
+        if componet.count <= level {
+            return parentDirectory
+        }
+        
+        let path = componet[componet.count-level..<componet.count].joined(separator: "/")
+        return path
     }
     
     /// 判断目录是否存在如果不存在则创建
