@@ -293,8 +293,8 @@ class FECaseSetHeader: UITableViewHeaderFooterView {
 }
 
 open class FEFuncCaseTableController: UITableViewController {
-    var rowTitles:[String] = []
-    var rowCallback: ((FEFuncCaseTableController, String, Int)->(Bool))? = nil
+    public var rowTitles:[String] = []
+    public var rowCallback: ((FEFuncCaseTableController, String, Int)->(Bool))? = nil
     
     public convenience init(titles:[String], callBack: ((FEFuncCaseTableController, String, Int)->(Bool))? = nil, title:String="调试项目") {
         self.init(style: .plain)
