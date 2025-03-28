@@ -10,7 +10,6 @@ import Foundation
 extension String: FastExtensionCompatibleValue { }
 extension FastExtensionWrapper where Base == String {
     
-    
     /// 存储容量的人性化表达
     /// - Parameter size: 容量 byte
     /// - Returns: 容量

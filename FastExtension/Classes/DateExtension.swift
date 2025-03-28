@@ -29,5 +29,30 @@ extension Date {
         formatter.locale = Locale.current
         return formatter.string(from: self)
     }
+    
+    // 获取本地化星期名称
+    public var weekdayString: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE"
+        return formatter.string(from: self)
+    }
+}
+
+extension Date: FastExtensionCompatibleValue { }
+public extension FastExtensionWrapper where Base == Date {
+    static func convertFrom(str: String, dateFormat:String = "yyyy-MM-dd HH:mm:ss", timeZone: TimeZone? = TimeZone.current) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // 固定格式，避免本地化问题
+        dateFormatter.timeZone = timeZone
+        // 转换为 Date 类型
+        if let date = dateFormatter.date(from: str) {
+            debugPrint("转换成功: \(date)")
+            return date
+        } else {
+            debugPrint("转换失败，格式不匹配")
+        }
+        return nil
+    }
 }
 
