@@ -54,6 +54,20 @@ extension FastExtensionWrapper where Base == String {
         return nil
     }
     
+    //
+    public static func jsonEncode<T:Encodable>(objc: T) -> String? {
+        do {
+            let jsonData = try JSONEncoder().encode<T>(objc)
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                // debugPrint(jsonString) // 输出: [1,2,3,4,5]
+                return jsonString
+            }
+        } catch {
+            debugPrint("编码失败: \(error)")
+        }
+        return nil
+    }
+    
     // 预排版宽度
     public func widthOf(font: UIFont, maxHeight: CGFloat = 40) -> CGFloat {
         guard !base.isEmpty else { return 0 }
