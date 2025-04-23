@@ -40,9 +40,10 @@ extension Date {
 
 extension Date: FastExtensionCompatibleValue { }
 public extension FastExtensionWrapper where Base == Date {
+    // 转换字符串为时间
     static func convertFrom(str: String, dateFormat:String = "yyyy-MM-dd HH:mm:ss", timeZone: TimeZone? = TimeZone.current) -> Date? {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = dateFormat
         dateFormatter.locale = Locale(identifier: "en_US_POSIX") // 固定格式，避免本地化问题
         dateFormatter.timeZone = timeZone
         // 转换为 Date 类型
