@@ -51,7 +51,7 @@ public extension FastExtensionWrapper where Base == Date {
             debugPrint("转换成功: \(date)")
             return date
         } else {
-            debugPrint("转换失败，格式不匹配")
+            debugPrint("转换失败，格式不匹配 \(str)")
         }
         return nil
     }

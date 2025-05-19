@@ -78,6 +78,10 @@ extension FastExtensionWrapper where Base == String {
     
     /// 字符串md5编码
     public var md5: String {
+        guard !base.isEmpty else {
+            return base
+        }
+        
         guard let data = base.data(using: .utf8) else {
             return base
         }
