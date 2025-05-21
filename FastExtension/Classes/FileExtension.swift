@@ -278,6 +278,42 @@ public extension FastExtensionWrapper where Base: FileManager {
         return 0
     }
     
+    func fileSize(atPath path: String) -> UInt64 {
+        let fileManager = FileManager.default
+        do {
+            let attributes = try fileManager.attributesOfItem(atPath: path)
+            if let fileSize = attributes[.size] as? UInt64 {
+                return fileSize
+            }
+        } catch {
+            print("无法获取文件大小：\(error)")
+        }
+        return 0
+    }
+    
+    
+    func folderSize(at url: URL) -> UInt64 {
+        var size: UInt64 = 0
+        let fileManager = FileManager.default
+
+        guard let enumerator = fileManager.enumerator(at: url, includingPropertiesForKeys: [.fileSizeKey], options: [], errorHandler: nil) else {
+            return 0
+        }
+
+        for case let fileURL as URL in enumerator {
+            do {
+                let attributes = try fileURL.resourceValues(forKeys: [.isRegularFileKey, .fileSizeKey])
+                if attributes.isRegularFile == true {
+                    size += UInt64(attributes.fileSize ?? 0)
+                }
+            } catch {
+                print("获取文件大小出错: \(fileURL.lastPathComponent), \(error)")
+            }
+        }
+
+        return size
+    }
+    
     // 递归打印目录结构，并计算目录大小
     func printDirectoryTreeAndCalculateSize(at path: String, prefix: String = "") -> Double {
         let fileManager = FileManager.default
@@ -344,6 +380,14 @@ public extension FastExtensionWrapper where Base: FileManager {
     func fileIsExit(at path: String) -> Bool {
         var isDir: ObjCBool = false
         if base.fileExists(atPath: path, isDirectory: &isDir), isDir.boolValue == false {
+            return true
+        }
+        return false
+    }
+    
+    func directoryIsExit(at path: String) -> Bool {
+        var isDir: ObjCBool = false
+        if base.fileExists(atPath: path, isDirectory: &isDir), isDir.boolValue == true {
             return true
         }
         return false

@@ -76,6 +76,18 @@ extension FastExtensionWrapper where Base == String {
         ]).fe.contentSize(maxH: maxHeight).width
     }
     
+    public func md5(count: UInt) -> Base {
+        guard count > 0 else {
+            return base
+        }
+        let maxCount = min(10000, count)
+        var md5String = base
+        for _ in 0..<count {
+            md5String = md5String.fe.md5
+        }
+        return md5
+    }
+    
     /// 字符串md5编码
     public var md5: String {
         guard !base.isEmpty else {
