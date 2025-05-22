@@ -82,7 +82,7 @@ extension FastExtensionWrapper where Base == String {
         }
         let maxCount = min(10000, count)
         var md5String = base
-        for _ in 0..<count {
+        for _ in 0..<maxCount {
             md5String = md5String.fe.md5
         }
         return md5
