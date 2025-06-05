@@ -55,5 +55,12 @@ public extension FastExtensionWrapper where Base == Date {
         }
         return nil
     }
+    
+    func dateString(fommaterStr: String = "yyyy-MM-dd", timeZone: TimeZone? = nil) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = fommaterStr
+        formatter.timeZone = timeZone ?? .current
+        return formatter.string(from: base)
+    }
 }
 
