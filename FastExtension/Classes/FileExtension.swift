@@ -105,9 +105,16 @@ public extension FastExtensionWrapper where Base: FileManager {
     ///   - atDirectory: 目录地址
     ///   - sort: 是否排序
     /// - Returns: 文件路径数组
-    func allFilePath(atDirectory: String, sort: Bool = true) throws -> [String] {
+    func allFilePath(atDirectory: String, sort: Bool = false) throws -> [String] {
         var filepaths: [String] = []
-        let nameArray = try base.contentsOfDirectory(atPath: atDirectory)
+        var nameArray = try base.contentsOfDirectory(atPath: atDirectory)
+        
+        if sort {
+            nameArray.sort { n1, n2 in
+                return n2 > n1
+            }
+        }
+        
         for name in nameArray {
             let fullPath = "\(atDirectory)/\(name)"
             var isDir: ObjCBool = true
