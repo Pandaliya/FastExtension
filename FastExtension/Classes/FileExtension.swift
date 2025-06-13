@@ -13,8 +13,8 @@ public enum FastSandboxType: Int {
     case temp = 2
 }
 
-enum UserError:Swift.Error{
-    case noKey(message:String)         // key 无效
+enum UserError:Swift.Error {
+    case noKey(message:String) // key 无效
     case ageBeyond     // 年级超出
 }
 
