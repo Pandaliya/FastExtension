@@ -83,9 +83,11 @@ extension FastExtensionWrapper where Base == String {
         let maxCount = min(10000, count)
         var md5String = base
         for _ in 0..<maxCount {
+            // debugPrint("before \(i): ", md5String)
             md5String = md5String.fe.md5
+            // debugPrint("after \(i): ", md5String)
         }
-        return md5
+        return md5String
     }
     
     /// 字符串md5编码
